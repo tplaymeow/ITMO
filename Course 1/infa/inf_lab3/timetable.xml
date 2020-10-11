@@ -1,0 +1,29 @@
+<timetable>
+  <lesson1>
+    <title>Физика(Лек)</title>
+    <time>10:00-11:30</time>
+    <week>Все</week>
+    <classroom>550</classroom>
+    <housing>Биржевая линия, д.16, лит.А</housing>
+    <teacher_name>Коробков Максим Петрович</teacher_name>
+    <format>Очно - дистанционный</format>
+  </lesson1>
+  <lesson2>
+    <title>Физика(Лаб)</title>
+    <time>13:30-15:00</time>
+    <week>Нечетная неделя</week>
+    <classroom>543</classroom>
+    <housing>Биржевая линия, д.16, лит.А</housing>
+    <teacher_name>Сорокина Елена Константиновна</teacher_name>
+    <format>Очно - дистанционный</format>
+  </lesson2>
+  <lesson3>
+    <title>Физика(Лаб)</title>
+    <time>13:30-15:00</time>
+    <week>Четная неделя</week>
+    <classroom>543</classroom>
+    <housing>Биржевая линия, д.16, лит.А</housing>
+    <teacher_name>Сорокина Елена Константиновна</teacher_name>
+    <format>Очно - дистанционный</format>
+  </lesson3>
+</timetable>
