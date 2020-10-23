@@ -41,7 +41,7 @@ def parser(input_file):
     return lessons
 
 
-def to_yaml(lessons: list[Lesson]):
+def to_yaml(lessons):
     output = "timetable:\n"
     for les_num, lesson in enumerate(lessons):
         output += f"  lesson{les_num + 1}:\n"
