@@ -1,6 +1,5 @@
 public abstract class Organism {
     private String name;
-    private String category = "Simple Organism";
     private final Place bornAt;
     private Place location;
     private Size size;
@@ -52,14 +51,6 @@ public abstract class Organism {
 
     public void setBodies(Organ[] bodies) {
         this.bodies = bodies;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 }
 
