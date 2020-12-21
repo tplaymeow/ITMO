@@ -31,12 +31,7 @@ public class Characteristic {
 
     @Override
     public String toString() {
-        return "Characteristic{" +
-                "size=" + size +
-                ", weight=" + weight +
-                ", isVisible=" + isVisible +
-                ", shape=" + shape +
-                '}';
+        return "Размер: " + size + ", Форма: " + shape;
     }
 
     public Size getSize() {

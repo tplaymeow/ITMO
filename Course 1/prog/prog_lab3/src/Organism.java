@@ -44,14 +44,9 @@ public abstract class Organism {
 
     @Override
     public String toString() {
-        return "Organism{" +
-                "name='" + name + '\'' +
-                ", bornAt=" + bornAt +
-                ", location=" + location +
-                ", characteristic=" + characteristic +
-                ", kingdom=" + kingdom +
-                ", organs=" + Arrays.toString(organs) +
-                '}';
+        return name + ':' +
+                "\n" + characteristic +
+                "\n Царство: " + kingdom;
     }
 
     public void leaveMark(Date date) {
