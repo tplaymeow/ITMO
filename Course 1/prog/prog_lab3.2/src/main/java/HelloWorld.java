@@ -1,5 +1,5 @@
 class HelloWorld{
     public static void main(String[] args) {
-        System.out.println("Тут будет что-то");
+        System.out.println("123"+19);
     }
 }
