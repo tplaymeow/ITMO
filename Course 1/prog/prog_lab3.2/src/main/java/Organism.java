@@ -18,7 +18,18 @@ public abstract class Organism {
         this.complexity = complexity;
         this.kingdom = kingdom;
         this.organs = organs;
-        System.out.println("Организм " + name + " родился в: " + bornAt+", проживает в: " + location);
+        System.out.println("Организм " + name + " родился в: " + bornAt + ".");
+    }
+
+    public Organism(String name, Place bornAt, Characteristic externalCharacteristic, int complexity, BiologyKingdom kingdom, Organ[] organs) {
+        this.name = name;
+        this.bornAt = bornAt;
+        this.location = bornAt;
+        this.externalCharacteristic = externalCharacteristic;
+        this.complexity = complexity;
+        this.kingdom = new BiologyKingdom[]{kingdom};
+        this.organs = organs;
+        System.out.println("Организм " + name + " родился в: " + bornAt + ".");
     }
 
     @Override
@@ -62,6 +73,10 @@ public abstract class Organism {
 
     public Place getLocation() {
         return location;
+    }
+
+    public void setLocation(Place location) {
+        this.location = location;
     }
 
     public Characteristic getExternalCharacteristic() {

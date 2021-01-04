@@ -9,10 +9,10 @@ public class OrganismPrinter {
         if (organism.getKingdom().length > 1) {
             System.out.println("Причислить " + organism.getName() + " куда-либо невозможно.");
             for (BiologyKingdom k : organism.getKingdom()) {
-                System.out.println(organism.getName() + " относится к царству " + k + ".");
+                System.out.println(organism.getName() + " обладает признаками " + k + ".");
             }
         } else {
-            System.out.println(organism.getName() + " относится к царству " + organism.getKingdom()[0] + ".");
+            System.out.println(organism.getName() + " обладает признаками " + organism.getKingdom()[0] + ".");
         }
     }
 

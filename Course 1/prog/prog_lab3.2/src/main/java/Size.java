@@ -1,5 +1,15 @@
 public enum Size {
-    SMALL,
-    MIDDLE,
-    LARGE
+    SMALL("Маленький"),
+    MIDDLE("Средний"),
+    LARGE("Большой");
+
+    private final String name;
+
+    Size(String name) {
+        this.name = name;
+    }
+
+    public String toString() {
+        return this.name;
+    }
 }

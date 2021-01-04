@@ -39,4 +39,16 @@ public class Place {
     public ArrayList<Mark> getMarks() {
         return marks;
     }
+
+    public CosmosObject getCosmosObject() {
+        return cosmosObject;
+    }
+
+    public double getxCoordinate() {
+        return xCoordinate;
+    }
+
+    public double getyCoordinate() {
+        return yCoordinate;
+    }
 }
