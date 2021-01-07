@@ -2,12 +2,14 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Place {
+    private String name;
     private final CosmosObject cosmosObject;
     private final double xCoordinate;
     private final double yCoordinate;
     private ArrayList<Mark> marks;
 
-    public Place(CosmosObject cosmosObject, double xCoordinate, double yCoordinate) {
+    public Place(String name, CosmosObject cosmosObject, double xCoordinate, double yCoordinate) {
+        this.name = name;
         this.cosmosObject = cosmosObject;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
@@ -16,7 +18,7 @@ public class Place {
 
     @Override
     public String toString() {
-        return "Планета: " + cosmosObject + ", X: " + xCoordinate + ", Y: " + yCoordinate;
+        return this.getName();
     }
 
     @Override
@@ -34,6 +36,10 @@ public class Place {
 
     public void addMark(Mark mark){
         marks.add(mark);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public ArrayList<Mark> getMarks() {

@@ -33,7 +33,14 @@ public class Creature extends Organism{
     }
 
     public void flyTo(Place location) {
-        if (location.getCosmosObject() == this.getLocation().getCosmosObject()) {
+        boolean isFlying = false;
+        for (Organ organ : this.getOrgans()) {
+            if (organ instanceof Wings) {
+                isFlying = true;
+                break;
+            }
+        }
+        if (isFlying && (location.getCosmosObject() == this.getLocation().getCosmosObject())) {
             this.setLocation(location);
             System.out.println(this.getName() + " перелетел в " + location + ".");
         }
