@@ -1,21 +1,51 @@
-public enum CosmosObject {
-    EARTH("Земля", 4500000000L),
-    A_FAR_PLANET("Далекая планета", 6000000000L),
-    MARS("Марс", 4600000000L);
+import java.util.Objects;
 
+public class CosmosObject {
     private final String name;
-    private final long age;
+    private long age;
+    private boolean isLives;
 
-    CosmosObject(String name, long age) {
+    public CosmosObject(String name, long age, boolean isLives) {
         this.name = name;
         this.age = age;
+        this.isLives = isLives;
     }
 
+    @Override
     public String toString() {
-        return this.name;
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CosmosObject that = (CosmosObject) o;
+        return age == that.age && isLives == that.isLives && Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, isLives);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public long getAge() {
         return age;
+    }
+
+    public void setAge(long age) {
+        this.age = age;
+    }
+
+    public boolean isLives() {
+        return isLives;
+    }
+
+    public void setLives(boolean lives) {
+        isLives = lives;
     }
 }

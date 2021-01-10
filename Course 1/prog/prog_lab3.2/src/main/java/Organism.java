@@ -54,15 +54,10 @@ public abstract class Organism {
         return "Имя: " + name + ". Место рождения: " + bornAt + ".";
     }
 
-    public void leaveMark(long date) {
-        long deltaAge = location.getCosmosObject().getAge() - 2020 - ((date > 0) ? date : -1 * date);
-        if (deltaAge < 500000000 && deltaAge > 0) {
-            location.addMark(new Mark(this, date));
-            System.out.println(name + " оставил след на " + location + " (" + location.getCosmosObject() + " еще молодая).");
-        } else if (deltaAge > 0) {
-            location.addMark(new Mark(this, date));
-            System.out.println(name + " оставил след на " + location + " (" + location.getCosmosObject() + " уже не молодая).");
-        }
+    public void leaveMark() {
+        location.addMark(new Mark(this));
+        if (location.getCosmosObject().getAge() < 10000000L) System.out.println(name + " оставил след на " + location.getName() + " (" + location.getCosmosObject() + "ещё молодая).");
+        else System.out.println(name + " оставил след на " + location.getName() + " (" + location.getCosmosObject() + "уже не молодая).");
     }
 
     public abstract void moveTo(Place location); //Разные организмы могут перемещатся на разные дистанции

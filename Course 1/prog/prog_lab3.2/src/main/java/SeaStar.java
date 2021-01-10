@@ -1,6 +1,11 @@
-public class SeaStar extends Organism {
+public class SeaStar extends Organism implements SeaAnimal{
     public SeaStar(String name, Place bornAt, Characteristic characteristic) {
-        super(name, bornAt, characteristic, 1, BiologyKingdom.ANIMALIA, new Organ[]{});
+        super(name,
+                bornAt,
+                characteristic,
+                1,
+                BiologyKingdom.ANIMALIA,
+                new Organ[]{});
     }
 
     @Override
@@ -23,7 +28,7 @@ public class SeaStar extends Organism {
         swimTo(location);
     }
 
-    private void swimTo(Place location) {
+    public void swimTo(Place location) {
         if ((location.getCosmosObject() == this.getLocation().getCosmosObject())
                 && (Math.sqrt(Math.pow(location.getxCoordinate() - this.getLocation().getxCoordinate(), 2) + Math.pow(location.getyCoordinate() - this.getLocation().getyCoordinate(), 2)) < 2)) {
             this.setLocation(location);

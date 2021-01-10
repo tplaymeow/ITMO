@@ -9,7 +9,7 @@ public class OrganismPrinter {
         if (organism.getKingdom().length > 1) {
             System.out.println("Причислить " + organism.getName() + " куда-либо невозможно.");
             for (BiologyKingdom k : organism.getKingdom()) {
-                System.out.println("\t" + organism.getName() + " обладает признаками " + k + ".");
+                System.out.println("\t-" + organism.getName() + " обладает признаками " + k + ".");
             }
         } else {
             System.out.println(organism.getName() + " обладает признаками " + organism.getKingdom()[0] + ".");
@@ -42,14 +42,14 @@ public class OrganismPrinter {
 
         if (count == 3) {
             System.out.println(organism.getName() + " является морским животным. Об этом говорят:");
-            System.out.println("\t" + organism.getExternalCharacteristic().getShape());
-            System.out.println("\t" + "Видимость");
-            System.out.println("\t" + "Невысокий уровень развития");
+            System.out.println("\t-" + organism.getExternalCharacteristic().getShape());
+            System.out.println("\t-" + "Видимость");
+            System.out.println("\t-" + "Невысокий уровень развития");
         } else if ((count <= 2) && (count > 0)) {
             System.out.println(organism.getName() + " имеет морское происхождение. Об этом говорят:");
-            if (organism.getExternalCharacteristic().getShape() == Shape.OTHER_SYMMETRICAL) System.out.println("\t" + organism.getExternalCharacteristic().getShape());
-            if (organism.getExternalCharacteristic().isVisible()) System.out.println("\t" + "Видимость");
-            if (organism.getComplexity() <= 5) System.out.println("\t" + "Невысокий уровень развития");
+            if (organism.getExternalCharacteristic().getShape() == Shape.OTHER_SYMMETRICAL) System.out.println("\t-" + organism.getExternalCharacteristic().getShape());
+            if (organism.getExternalCharacteristic().isVisible()) System.out.println("\t-" + "Видимость");
+            if (organism.getComplexity() <= 5) System.out.println("\t-" + "Невысокий уровень развития");
             System.out.println("Однако далее " + organism.getName() + " развивался(-ась) в других направлениях.");
         } else {
             System.out.println(organism.getName() + " не имеет признаков морского животного.");

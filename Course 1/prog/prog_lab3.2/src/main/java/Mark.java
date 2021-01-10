@@ -2,11 +2,9 @@ import java.util.Objects;
 
 public class Mark {
     private final Organism author;
-    private final long date;
 
-    public Mark(Organism author, long date) {
+    public Mark(Organism author) {
         this.author = author;
-        this.date = date;
     }
 
     @Override
@@ -29,9 +27,5 @@ public class Mark {
 
     public Organism getAuthor() {
         return author;
-    }
-
-    public long getDate() {
-        return date;
     }
 }

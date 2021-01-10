@@ -1,4 +1,4 @@
-public class Creature extends Organism{
+public class Creature extends Organism implements Plant, SeaAnimal{
     public Creature(String name, Place bornAt, Characteristic characteristic) {
         super(name,
                 bornAt,
@@ -61,5 +61,9 @@ public class Creature extends Organism{
             organ.setCondition(1d);
             System.out.println(organ.getName() + " воставновлен.");
         }
+    }
+
+    public void startLife() {
+        System.out.println(this.getName() + " Зародил жизнь на " + this.getLocation());
     }
 }
