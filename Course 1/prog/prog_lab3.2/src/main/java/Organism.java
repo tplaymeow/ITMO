@@ -110,4 +110,19 @@ public abstract class Organism {
     public void setComplexity(int complexity) {
         this.complexity = complexity;
     }
+
+    public void reduceFakeLeg(){
+        for (Organ o:
+                organs) {
+            if (o instanceof FakeLeg) {
+                o.getCharacteristic().setSize(Size.SMALL);
+                System.out.println("Размер " + o.getName() + " у " + name + " уменьшился.");
+            }
+        }
+    }
+
+    public void simplifyShape() {
+        externalCharacteristic.setShape(Shape.SIMPLE_SHAPE);
+        System.out.println("У " + name + " упростилась форма.");
+    }
 }

@@ -27,6 +27,10 @@ public class Human extends Organism{
         }
     }
 
+    public void refuseThink(Think think){
+        System.out.println(this.getName() + " отказадся от " + think);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

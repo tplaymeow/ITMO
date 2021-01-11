@@ -64,6 +64,8 @@ public class Creature extends Organism implements Plant, SeaAnimal{
     }
 
     public void startLife() {
-        System.out.println(this.getName() + " Зародил жизнь на " + this.getLocation());
+        this.getLocation().getCosmosObject().setLives(true);
+        System.out.println(this.getName() + " зародил жизнь на " + this.getLocation().getCosmosObject() + ".");
     }
+
 }
