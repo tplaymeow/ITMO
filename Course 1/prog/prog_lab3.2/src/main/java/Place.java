@@ -26,12 +26,12 @@ public class Place {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Place place = (Place) o;
-        return Double.compare(place.xCoordinate, xCoordinate) == 0 && Double.compare(place.yCoordinate, yCoordinate) == 0 && cosmosObject == place.cosmosObject && Objects.equals(marks, place.marks);
+        return Double.compare(place.xCoordinate, xCoordinate) == 0 && Double.compare(place.yCoordinate, yCoordinate) == 0 && Objects.equals(name, place.name) && Objects.equals(cosmosObject, place.cosmosObject) && Objects.equals(marks, place.marks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cosmosObject, xCoordinate, yCoordinate, marks);
+        return Objects.hash(name, cosmosObject, xCoordinate, yCoordinate, marks);
     }
 
     public void addMark(Mark mark){

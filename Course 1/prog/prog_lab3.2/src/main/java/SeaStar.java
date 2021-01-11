@@ -4,7 +4,7 @@ public class SeaStar extends Organism implements SeaAnimal{
                 bornAt,
                 characteristic,
                 1,
-                BiologyKingdom.ANIMALIA,
+                new BiologicalAffiliation(BiologyKingdom.ANIMALIA, 1),
                 new Organ[]{});
     }
 

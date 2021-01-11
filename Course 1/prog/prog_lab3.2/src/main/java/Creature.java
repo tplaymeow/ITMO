@@ -4,8 +4,8 @@ public class Creature extends Organism implements Plant, SeaAnimal{
                 bornAt,
                 characteristic,
                 10,
-                new BiologyKingdom[]{BiologyKingdom.PLANTAE, BiologyKingdom.ANIMALIA},
-                new Organ[]{new Wings("Крылья", OrganType.IN_USAGE, 4000, 0.8),
+                new BiologicalAffiliation[]{new BiologicalAffiliation(BiologyKingdom.PLANTAE, 0.25), new BiologicalAffiliation(BiologyKingdom.ANIMALIA, 0.75)},
+                new Organ[]{//new Wings("Крылья", OrganType.IN_USAGE, 4000, 0.8),
                         new Heart("Сердце", OrganType.IN_USAGE, 4000, 0.7),
                         new FakeLeg("Лженога", 0.3),
                         new Nerves("Нервы", OrganType.IN_USAGE, 1000, 0.5)});
@@ -17,13 +17,13 @@ public class Creature extends Organism implements Plant, SeaAnimal{
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        return super.equals(o);
     }
 
     @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
+    public int hashCode() {
+        return super.hashCode();
     }
 
     @Override

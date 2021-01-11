@@ -1,4 +1,4 @@
-class HelloWorld{
+class Main {
     public static void main(String[] args) {
         action();
     }
@@ -29,7 +29,6 @@ class HelloWorld{
 
         //Create others
         OrganismPrinter printer = new OrganismPrinter(creature1);
-        Evolution evolution = new Evolution();
         Think difficultThink = new Think(10, "Что-то сложное");
         Think myth = new Think(2, "древние мифы о Старцах");
         Think story = new Think(2, "фантастические рассказы друга-фольклориста из Мискатоникского университета о живущих в горах тварях родом из космоса");
@@ -44,7 +43,7 @@ class HelloWorld{
         printer.looksLike(seaStar);
         printer.comparison(seaStar);
         printer.isWater();
-        evolution.getUp(creature1);
+        Evolution.getUp(creature1);
         creature2.moveTo(plArcStones);// <- тут надо еще подумать
         creature2.leaveMark();
         lake.thinkAbout(difficultThink);
@@ -57,8 +56,11 @@ class HelloWorld{
         lake.refuseThink(easyThink);
 
         printer.comparison(plArcStones.getMarks().get(0).getAuthor());
-        creature1.reduceFakeLeg();
-        creature1.simplifyShape();
+        Evolution.regress(creature1);
+        printer.mostPopularOrganType();
+        lake.makeAConclusion();
+        lake.thinkAbout(myth);
+        lake.rename(creature1, "Старец");
     }
 }
 

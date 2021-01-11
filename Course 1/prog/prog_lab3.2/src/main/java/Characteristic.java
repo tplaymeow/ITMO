@@ -24,7 +24,7 @@ public class Characteristic {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Characteristic that = (Characteristic) o;
-        return Double.compare(that.weight, weight) == 0 && isVisible == that.isVisible && Objects.equals(size, that.size) && Objects.equals(shape, that.shape);
+        return Double.compare(that.weight, weight) == 0 && isVisible == that.isVisible && size == that.size && shape == that.shape;
     }
 
     @Override

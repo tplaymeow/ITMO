@@ -9,10 +9,10 @@ public abstract class Organism {
     private Place location;
     private Characteristic externalCharacteristic;
     private int complexity;
-    private final BiologyKingdom[] kingdom;
+    private final BiologicalAffiliation[] kingdom;
     private ArrayList<Organ> organs;
 
-    public Organism(String name, Place bornAt, Characteristic externalCharacteristic, int complexity, BiologyKingdom[] kingdom, Organ[] organs) {
+    public Organism(String name, Place bornAt, Characteristic externalCharacteristic, int complexity, BiologicalAffiliation[] kingdom, Organ[] organs) {
         this.name = name;
         this.bornAt = bornAt;
         this.location = bornAt;
@@ -23,13 +23,13 @@ public abstract class Organism {
         System.out.println("Организм " + name + " родился в: " + bornAt + ".");
     }
 
-    public Organism(String name, Place bornAt, Characteristic externalCharacteristic, int complexity, BiologyKingdom kingdom, Organ[] organs) {
+    public Organism(String name, Place bornAt, Characteristic externalCharacteristic, int complexity, BiologicalAffiliation kingdom, Organ[] organs) {
         this.name = name;
         this.bornAt = bornAt;
         this.location = bornAt;
         this.externalCharacteristic = externalCharacteristic;
         this.complexity = complexity;
-        this.kingdom = new BiologyKingdom[]{kingdom};
+        this.kingdom = new BiologicalAffiliation[]{kingdom};
         this.organs = new ArrayList<Organ>(Arrays.asList(organs));
         System.out.println("Организм " + name + " родился в: " + bornAt + ".");
     }
@@ -95,7 +95,7 @@ public abstract class Organism {
         this.externalCharacteristic = externalCharacteristic;
     }
 
-    public BiologyKingdom[] getKingdom() {
+    public BiologicalAffiliation[] getKingdom() {
         return kingdom;
     }
 
@@ -109,20 +109,5 @@ public abstract class Organism {
 
     public void setComplexity(int complexity) {
         this.complexity = complexity;
-    }
-
-    public void reduceFakeLeg(){
-        for (Organ o:
-                organs) {
-            if (o instanceof FakeLeg) {
-                o.getCharacteristic().setSize(Size.SMALL);
-                System.out.println("Размер " + o.getName() + " у " + name + " уменьшился.");
-            }
-        }
-    }
-
-    public void simplifyShape() {
-        externalCharacteristic.setShape(Shape.SIMPLE_SHAPE);
-        System.out.println("У " + name + " упростилась форма.");
     }
 }

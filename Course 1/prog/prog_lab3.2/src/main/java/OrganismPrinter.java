@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class OrganismPrinter {
     private Organism organism;
 
@@ -8,8 +10,8 @@ public class OrganismPrinter {
     public void printBiologyKingdom() {
         if (organism.getKingdom().length > 1) {
             System.out.println("Причислить " + organism.getName() + " куда-либо невозможно.");
-            for (BiologyKingdom k : organism.getKingdom()) {
-                System.out.println("\t-" + organism.getName() + " обладает признаками " + k + ".");
+            for (BiologicalAffiliation k : organism.getKingdom()) {
+                System.out.println("\t-" + organism.getName() + " принадлежит " + k + ".");
             }
         } else {
             System.out.println(organism.getName() + " обладает признаками " + organism.getKingdom()[0] + ".");
@@ -54,5 +56,41 @@ public class OrganismPrinter {
         } else {
             System.out.println(organism.getName() + " не имеет признаков морского животного.");
         }
+    }
+
+    public void mostPopularOrganType() {
+        int rud = 0;
+        int atr = 0;
+        int use = 0;
+
+        for (Organ organ:
+             organism.getOrgans()) {
+            if (organ.getType() == OrganType.RUDIMENT) rud++;
+            else if (organ.getType() == OrganType.ATROPH) atr++;
+            else if (organ.getType() == OrganType.IN_USAGE) use ++;
+        }
+        System.out.print("У " + organism.getName() + " преобладают ");
+        if (rud >= atr && rud >= use) System.out.print(OrganType.RUDIMENT + " ");
+        if (atr >= rud && atr >= use) System.out.print(OrganType.ATROPH + " ");
+        if (use >= atr && use >= rud) System.out.print(OrganType.RUDIMENT + " ");
+        System.out.println("органы.");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrganismPrinter printer = (OrganismPrinter) o;
+        return Objects.equals(organism, printer.organism);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(organism);
+    }
+
+    @Override
+    public String toString() {
+        return "Принтер: " + organism.getName();
     }
 }
