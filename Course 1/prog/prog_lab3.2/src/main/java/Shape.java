@@ -3,7 +3,8 @@ public enum Shape {
     SQUARE("Квадратная форма"),
     OTHER_SYMMETRICAL("Симметричная форма"),
     OTHER_NON_SYMMETRICAL("Не семметричная форма"),
-    SIMPLE_SHAPE("Простая форма");
+    SIMPLE_SHAPE("Простая форма"),
+    STRAIGHT("Прямая");
 
     private final String name;
 

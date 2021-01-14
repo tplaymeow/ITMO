@@ -46,6 +46,58 @@ public class Place {
         return marks;
     }
 
+    public class Weather {
+        double temperature;
+
+        public Weather(double temperature) {
+            this.temperature = temperature;
+        }
+
+        public void applySunEffect(Organism organism) {
+            class SunRay {
+                int brightness;
+
+                public SunRay(int brightness) {
+                    this.brightness = brightness;
+                }
+
+                public void applySunRayEffect(Organism organism) {
+                    organism.setWet(true);
+                    System.out.println(organism.getName() + " несколько обмяк под лучами");
+
+                    int count = 3;
+                    for (int i = 0; i < count; i++) {
+                        organism.getOrgans().get(i).getCharacteristic().setShape(Shape.STRAIGHT);
+                        System.out.println("\t-" + organism.getOrgans().get(i).getName() + " выпрямился под лучами");
+                    }
+                }
+
+                @Override
+                public boolean equals(Object o) {
+                    if (this == o) return true;
+                    if (o == null || getClass() != o.getClass()) return false;
+                    SunRay sunRay = (SunRay) o;
+                    return brightness == sunRay.brightness;
+                }
+
+                @Override
+                public int hashCode() {
+                    return Objects.hash(brightness);
+                }
+
+                @Override
+                public String toString() {
+                    return "SunRay{" +
+                            "brightness=" + brightness +
+                            '}';
+                }
+            }
+
+            SunRay ray = new SunRay(10);
+            ray.applySunRayEffect(organism);
+        }
+    }
+
     public CosmosObject getCosmosObject() {
         return cosmosObject;
     }

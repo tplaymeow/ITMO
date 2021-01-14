@@ -11,6 +11,7 @@ public abstract class Organism {
     private int complexity;
     private final BiologicalAffiliation[] kingdom;
     private ArrayList<Organ> organs;
+    boolean isWet;
 
     public Organism(String name, Place bornAt, Characteristic externalCharacteristic, int complexity, BiologicalAffiliation[] kingdom, Organ[] organs) {
         this.name = name;
@@ -21,6 +22,7 @@ public abstract class Organism {
         this.kingdom = kingdom;
         this.organs = new ArrayList<Organ>(Arrays.asList(organs));
         System.out.println("Организм " + name + " родился в: " + bornAt + ".");
+        isWet = false;
     }
 
     public Organism(String name, Place bornAt, Characteristic externalCharacteristic, int complexity, BiologicalAffiliation kingdom, Organ[] organs) {
@@ -32,6 +34,7 @@ public abstract class Organism {
         this.kingdom = new BiologicalAffiliation[]{kingdom};
         this.organs = new ArrayList<Organ>(Arrays.asList(organs));
         System.out.println("Организм " + name + " родился в: " + bornAt + ".");
+        isWet=false;
     }
 
     @Override
@@ -65,6 +68,11 @@ public abstract class Organism {
     public void addOrgan(Organ organ) {
         this.organs.add(organ);
         System.out.println("У " + this.getName() + " выросло(-и) " + organ.getName() + ".");
+    }
+
+    public void removeOrgan(Organ organ) throws MandatoryOrganException {
+        if (organ.isMandatory()) throw new MandatoryOrganException();
+        organs.remove(organ);
     }
 
     public String getName() {
@@ -109,5 +117,13 @@ public abstract class Organism {
 
     public void setComplexity(int complexity) {
         this.complexity = complexity;
+    }
+
+    public boolean isWet() {
+        return isWet;
+    }
+
+    public void setWet(boolean wet) {
+        isWet = wet;
     }
 }

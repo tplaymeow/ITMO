@@ -6,12 +6,14 @@ public abstract class Organ {
     private final double fullPrice;
     private double condition; // from 0 to 1
     private Characteristic characteristic;
+    boolean isMandatory;
 
     public Organ(String name, OrganType type, double fullPrice, double condition) {
         this.name = name;
         this.type = type;
         this.fullPrice = fullPrice;
         this.condition = condition;
+        isMandatory = true;
     }
 
     @Override
@@ -62,5 +64,13 @@ public abstract class Organ {
 
     public void setCharacteristic(Characteristic characteristic) {
         this.characteristic = characteristic;
+    }
+
+    public boolean isMandatory() {
+        return isMandatory;
+    }
+
+    public void setMandatory(boolean mandatory) {
+        isMandatory = mandatory;
     }
 }

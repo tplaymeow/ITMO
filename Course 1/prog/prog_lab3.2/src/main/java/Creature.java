@@ -6,9 +6,11 @@ public class Creature extends Organism implements Plant, SeaAnimal{
                 10,
                 new BiologicalAffiliation[]{new BiologicalAffiliation(BiologyKingdom.PLANTAE, 0.25), new BiologicalAffiliation(BiologyKingdom.ANIMALIA, 0.75)},
                 new Organ[]{//new Wings("Крылья", OrganType.IN_USAGE, 4000, 0.8),
+
                         new Heart("Сердце", OrganType.IN_USAGE, 4000, 0.7),
                         new FakeLeg("Лженога", 0.3),
                         new Nerves("Нервы", OrganType.IN_USAGE, 1000, 0.5)});
+
     }
 
     @Override
