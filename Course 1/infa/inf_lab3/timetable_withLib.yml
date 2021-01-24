@@ -1,0 +1,25 @@
+timetable:
+  lesson1:
+    title: Физика(Лек)
+    time: 10:00-11:30
+    week: Все
+    classroom: '550'
+    housing: Биржевая линия, д.16, лит.А
+    teacher_name: Коробков Максим Петрович
+    format: Очно - дистанционный
+  lesson2:
+    title: Физика(Лаб)
+    time: 13:30-15:00
+    week: Нечетная неделя
+    classroom: '543'
+    housing: Биржевая линия, д.16, лит.А
+    teacher_name: Сорокина Елена Константиновна
+    format: Очно - дистанционный
+  lesson3:
+    title: Физика(Лаб)
+    time: 13:30-15:00
+    week: Четная неделя
+    classroom: '543'
+    housing: Биржевая линия, д.16, лит.А
+    teacher_name: Сорокина Елена Константиновна
+    format: Очно - дистанционный
