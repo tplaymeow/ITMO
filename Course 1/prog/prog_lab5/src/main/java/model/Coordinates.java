@@ -1,6 +1,11 @@
 package model;
 
+import annotations.GreaterThan;
+import annotations.NotNull;
+
 public class Coordinates {
+    @NotNull
+    @GreaterThan(num = -387)
     private Long x; //Значение поля должно быть больше -387, Поле не может быть null
     private double y;
 

@@ -1,13 +1,27 @@
 package model;
 
+import annotations.LongerThan;
+import annotations.NotEqualString;
+import annotations.ShorterThan;
+import annotations.NotNull;
+
 import java.util.Objects;
 
 public class Person {
+    @NotNull
+    @NotEqualString
     private String name; //Поле не может быть null, Строка не может быть пустой
+    @LongerThan(length = 6)
+    @ShorterThan(length = 49)
+    @NotNull
     private String passportID; //Длина строки должна быть не меньше 6, Длина строки не должна быть больше 49, Поле не может быть null
+    @NotNull
     private Color eyeColor; //Поле не может быть null
+    @NotNull
     private Color hairColor; //Поле не может быть null
+    @NotNull
     private Country nationality; //Поле не может быть null
+    @NotNull
     private Location location; //Поле может быть null
 
     public Person(String name,
@@ -29,6 +43,5 @@ public class Person {
         this.hairColor = Objects.requireNonNull(hairColor, "Hair color can't be null");
         this.nationality = Objects.requireNonNull(nationality, "Nationality can't be null");
         this.location = Objects.requireNonNull(location, "model.Location can't be null");
-        ;
     }
 }

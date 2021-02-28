@@ -1,11 +1,16 @@
 package model;
 
+import annotations.NotNull;
+
 import java.util.Objects;
 
 public class Location {
+    @NotNull
     private Float x; //Поле не может быть null
+    @NotNull
     private Long y; //Поле не может быть null
     private long z;
+    @NotNull
     private String name; //Поле может быть null
 
     public Location(Float x, Long y, long z, String name) {
