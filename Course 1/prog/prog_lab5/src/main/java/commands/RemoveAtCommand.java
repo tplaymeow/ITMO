@@ -29,7 +29,7 @@ public class RemoveAtCommand extends Command{
             } catch (NumberFormatException e) {
                 System.out.println("Не верный формат числа");
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("Не верный индекс");
+                System.out.println("Неверный индекс");
             }
         } else {
             System.out.println("Не верное количество аргументов");

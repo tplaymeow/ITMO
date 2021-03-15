@@ -11,6 +11,10 @@ public class CollectionManager{
     private Command[] commands;
     private Date date;
 
+    {
+        this.date = new Date();
+    }
+
     public CollectionManager(LinkedList<StudyGroup> collection, Command[] commands) {
         this.collection = collection;
         this.commands = commands;
@@ -29,6 +33,14 @@ public class CollectionManager{
 
     public Command[] getCommands() {
         return commands;
+    }
+
+    public void setCommands(Command[] commands) {
+        this.commands = commands;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Date getDate() {

@@ -1,6 +1,9 @@
 package commands;
 
 import collectionManager.CollectionManager;
+import model.StudyGroup;
+
+import java.text.SimpleDateFormat;
 
 /**
  * Класс команды info. <b>info</b>: Выводит информацию о колекции
@@ -21,8 +24,10 @@ public class InfoCommand extends Command {
     @Override
     public void execute(String arguments) {
         if (arguments.length() == 0) {
-            System.out.println("Тип: " + this.getCollectionManager().getClass());
-            System.out.println("Время создания: " + this.getCollectionManager().getDate());
+            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss");
+
+            System.out.println("Тип: " + StudyGroup.class);
+            System.out.println("Время создания: " + formatter.format(this.getCollectionManager().getDate()));
             System.out.println("Кол-во элементов: " + this.getCollectionManager().getCollection().size());
         } else {
             System.out.println("Не верное количество аргументов");

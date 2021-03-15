@@ -30,13 +30,11 @@ public class StudyGroup {
 
     {
         CreatedStudyGroupsCount += 1;
-        id = CreatedStudyGroupsCount;
     }
 
     //TODO: добавить конструктор без даты
     public StudyGroup(String name,
                       Coordinates coordinates,
-                      LocalDateTime creationDate,
                       int studentsCount,
                       int shouldBeExpelled,
                       FormOfEducation formOfEducation,
@@ -48,7 +46,7 @@ public class StudyGroup {
             throw new IllegalArgumentException("Name can't be \"\"");
         this.name = name;
         this.coordinates = Objects.requireNonNull(coordinates, "Coordinate can't be null");
-        this.creationDate = Objects.requireNonNull(creationDate, "Creation date can't be null");
+        this.creationDate = LocalDateTime.now();
         if (studentsCount <= 0)
             throw new IllegalArgumentException("Students count should be > 0");
         this.studentsCount = studentsCount;
@@ -58,6 +56,11 @@ public class StudyGroup {
         this.formOfEducation = Objects.requireNonNull(formOfEducation, "Form of education can't be null");
         this.semesterEnum = Objects.requireNonNull(semesterEnum, "model.Semester enum can't be null");
         this.groupAdmin = Objects.requireNonNull(groupAdmin, "Group admin can't be null");
+        this.id = CreatedStudyGroupsCount;
+    }
+
+    public StudyGroup() {
+
     }
 
     public static long getCreatedStudyGroupsCount() {

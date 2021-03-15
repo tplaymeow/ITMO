@@ -2,6 +2,8 @@ package commands;
 
 import collectionManager.CollectionManager;
 
+import java.util.Date;
+
 /**
  * Класс команды clear. <b>clear</b>: очистить коллекцию
  */
@@ -22,8 +24,10 @@ public class ClearCommand extends Command{
     public void execute(String arguments) {
         if (arguments.length() == 0) {
             this.getCollectionManager().getCollection().clear();
+            this.getCollectionManager().setDate(new Date());
         } else {
             System.out.println("Не верное количество аргументов");
         }
     }
+
 }

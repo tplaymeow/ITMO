@@ -2,6 +2,8 @@ import annotations.Between;
 import annotations.GreaterThan;
 import annotations.LongerThan;
 
+import java.time.LocalDateTime;
+
 public class A {
     public A() {
     }
@@ -15,6 +17,7 @@ public class A {
     String name = "hello";
     slova slov = slova.poka;
     B aB = new B();
+    LocalDateTime localDateTime = LocalDateTime.now();
 
     @Override
     public String toString() {
@@ -24,6 +27,7 @@ public class A {
                 ", name='" + name + '\'' +
                 ", slov=" + slov +
                 ", aB=" + aB +
+                ", localDateTime=" + localDateTime +
                 '}';
     }
 }

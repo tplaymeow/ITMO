@@ -1,37 +1,57 @@
+import app.App;
+import model.*;
+import utils.CSVConstructor;
 import utils.Parser;
 import utils.Validator;
 
 import java.lang.reflect.InvocationTargetException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IllegalAccessException {
-////        Integer h1 = 5;
-////        ArrayList<A> list = new ArrayList<>();
-////        list.add(new A());
-//
-//        Parser parser = new Parser(A.class);
-//        ArrayList<String> names = parser.getNames();
-//        names.forEach(System.out::println);
-//        try {
-//            ArrayList<String> values = parser.objectToData(new A());
-//            values.forEach(System.out::println);
-//            A a_new = (A) parser.objectFromData(names, values);
-//            System.out.println("\n\n\n\n\n");
-//            System.out.println(a_new);
-//        } catch (IllegalAccessException | NoSuchFieldException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
-//            e.printStackTrace();
-//        }
-//
-        A a = new A();
-        Validator validator = new Validator(A.class);
-        System.out.println(validator.validate(a));
-        // System.out.println(slova.class.isEnum());
-        // System.out.println(new Integer(6) > 11);
-
-        slova.valueOf("govno");
-
+    public static void main(String[] args) {
+        App app = new App("StudyGroups.csv");
+        app.interactive(System.in);
     }
+
+//    public static void noMain() throws IllegalAccessException {
+//        StudyGroup studyGroup = new StudyGroup("Крутая группа",
+//                new Coordinates(156L, 13.6),
+//                16,
+//                4,
+//                FormOfEducation.FULL_TIME_EDUCATION,
+//                Semester.FIRST,
+//                new Person("Тимурррррррррррр",
+//                        "31166703",
+//                        Color.BLACK,
+//                        Color.BLACK,
+//                        Country.FRANCE,
+//                        new Location(13.5f, 15L, 17, "Школа")));
+//
+//        StudyGroup studyGroup1 = new StudyGroup("Еще одна крутая группа",
+//                new Coordinates(156L, 13.6),
+//                16,
+//                4,
+//                FormOfEducation.FULL_TIME_EDUCATION,
+//                Semester.FIRST,
+//                new Person("Лох",
+//                        "31166703",
+//                        Color.BLACK,
+//                        Color.RED,
+//                        Country.FRANCE,
+//                        new Location(13.5f, 15L, 17, "Школа")));
+//
+//        LinkedList<StudyGroup> studyGroups = new LinkedList<>();
+//        studyGroups.add(studyGroup);
+//        studyGroups.add(studyGroup1);
+//        Parser parser = new Parser(StudyGroup.class);
+//        CSVConstructor.saveCSVFromData(parser.collectionToData(studyGroups), parser.getNames(), "StudyGroups.csv");
+//
+//        App app = new App();
+//        app.collectionManager.getCollection().forEach(System.out::println);
+//    }
 }
 
 enum slova {

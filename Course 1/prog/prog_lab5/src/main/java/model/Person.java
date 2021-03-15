@@ -34,14 +34,19 @@ public class Person {
         name = Objects.requireNonNull(name, "Name can't be null");
         if (name.equals(""))
             throw new IllegalArgumentException("Name can't be \"\"");
+        this.name = name;
 
         passportID = Objects.requireNonNull(passportID, "passportID can't be null");
-        if (passportID.length() >= 6 && passportID.length() <= 49)
+        if (passportID.length() <= 6 && passportID.length() >= 49)
             throw new IllegalArgumentException("Incorrect passportID length");
+        this.passportID = passportID;
 
         this.eyeColor = Objects.requireNonNull(eyeColor, "Eye color can't be null");
         this.hairColor = Objects.requireNonNull(hairColor, "Hair color can't be null");
         this.nationality = Objects.requireNonNull(nationality, "Nationality can't be null");
         this.location = Objects.requireNonNull(location, "model.Location can't be null");
+    }
+
+    public Person() {
     }
 }

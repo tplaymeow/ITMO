@@ -20,4 +20,7 @@ public class Location {
         this.name = Objects.requireNonNull(name, "Name can't be null");
         ;
     }
+
+    public Location() {
+    }
 }

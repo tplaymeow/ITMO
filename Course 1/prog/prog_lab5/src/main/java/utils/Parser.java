@@ -1,12 +1,15 @@
 package utils;
 
-import java.lang.reflect.Constructor;
+import model.StudyGroup;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
-public class Parser {
+public class Parser <T> {
     private final static ArrayList<Class> wrapperClasses = new ArrayList<>(Arrays.asList(new Class[]{
             Byte.class,
             Short.class,
@@ -30,18 +33,18 @@ public class Parser {
             if (field.getType().isPrimitive()
                     || wrapperClasses.contains(field.getType())
                     || field.getType().equals(String.class)
-                    || field.getType().isEnum()) {
+                    || field.getType().isEnum()
+                    || field.getType().equals(LocalDateTime.class)) {
                 names.add(field.getName());
             } else {
-                Parser sub_parser = new Parser(field.getType());
+                Parser<?> sub_parser = new Parser<>(field.getType());
                 sub_parser.getNames().forEach(name -> names.add(field.getName() + "/" + name));
             }
         }
-
         return names;
     }
 
-    //TODO: разобраться с эксепшенами
+    // TODO: разобраться с эксепшенами
     public ArrayList<String> objectToData(Object object) throws IllegalAccessException {
         if (clazz.isInstance(object)) {
             ArrayList<String> values = new ArrayList<>();
@@ -51,10 +54,11 @@ public class Parser {
                 if (field.getType().isPrimitive()
                         || wrapperClasses.contains(field.getType())
                         || field.getType().equals(String.class)
-                        || field.getType().isEnum()) {
+                        || field.getType().isEnum()
+                        || field.getType().equals(LocalDateTime.class)) {
                     values.add(field.get(object).toString());
                 } else {
-                    Parser sub_parser = new Parser(field.getType());
+                    Parser<?> sub_parser = new Parser<>(field.getType());
                     values.addAll(sub_parser.objectToData(field.get(object)));
                 }
             }
@@ -85,7 +89,7 @@ public class Parser {
                     }
                 }
 
-                Parser sub_parser = new Parser(field.getType());
+                Parser<?> sub_parser = new Parser<>(field.getType());
                 field.set(object, sub_parser.objectFromData(sub_names, sub_values));
 
             } else {
@@ -113,11 +117,34 @@ public class Parser {
                     field.set(object, value);
                 } else if (field.getType().isEnum()) {
                     field.set(object, Enum.valueOf((Class<Enum>) field.getType(), value));
+                } else if (field.getType().equals(LocalDateTime.class)) {
+                    field.set(object, LocalDateTime.parse(value));
                 }
             }
         }
 
         return object;
+    }
+
+    public ArrayList<ArrayList<String>> collectionToData(LinkedList<StudyGroup> objects) throws IllegalAccessException {
+        ArrayList<ArrayList<String>> data = new ArrayList<>();
+
+        for (Object object:
+             objects) {
+            data.add(objectToData(object));
+        }
+
+        return data;
+    }
+
+    public ArrayList<T> collectionFromData(ArrayList<ArrayList<String>> data) throws InvocationTargetException, NoSuchMethodException, NoSuchFieldException, InstantiationException, IllegalAccessException {
+        ArrayList<T> collection = new ArrayList<>();
+        for (ArrayList<String> objData:
+             data) {
+            collection.add((T) objectFromData(getNames(), objData));
+        }
+
+        return collection;
     }
 
     public static ArrayList<Class> getWrapperClasses() {
