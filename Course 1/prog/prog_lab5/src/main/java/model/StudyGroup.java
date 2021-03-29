@@ -1,6 +1,7 @@
 package model;
 
 import annotations.GreaterThan;
+import annotations.NotEqualString;
 import annotations.NotNull;
 
 import java.time.LocalDateTime;
@@ -12,6 +13,7 @@ public class StudyGroup {
     @GreaterThan
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     @NotNull
+    @NotEqualString(string = "")
     private String name; //Поле не может быть null, Строка не может быть пустой
     @NotNull
     private Coordinates coordinates; //Поле не может быть null
@@ -101,5 +103,20 @@ public class StudyGroup {
 
     public Person getGroupAdmin() {
         return groupAdmin;
+    }
+
+    @Override
+    public String toString() {
+        return "StudyGroup{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", coordinates=" + coordinates +
+                ", creationDate=" + creationDate +
+                ", studentsCount=" + studentsCount +
+                ", shouldBeExpelled=" + shouldBeExpelled +
+                ", formOfEducation=" + formOfEducation +
+                ", semesterEnum=" + semesterEnum +
+                ", groupAdmin=" + groupAdmin +
+                '}';
     }
 }

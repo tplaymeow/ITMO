@@ -1,33 +1,33 @@
-import annotations.Between;
-import annotations.GreaterThan;
-import annotations.LongerThan;
-
-import java.time.LocalDateTime;
-
-public class A {
-    public A() {
-    }
-
-    @Between(from = 1, to = 10)
-    int a = 5;
-    @GreaterThan(num = -4)
-    @Between(from = 3, to = 7)
-    Integer b = 6;
-    @LongerThan(length = 5)
-    String name = "hello";
-    slova slov = slova.poka;
-    B aB = new B();
-    LocalDateTime localDateTime = LocalDateTime.now();
-
-    @Override
-    public String toString() {
-        return "A{" +
-                "a=" + a +
-                ", b=" + b +
-                ", name='" + name + '\'' +
-                ", slov=" + slov +
-                ", aB=" + aB +
-                ", localDateTime=" + localDateTime +
-                '}';
-    }
-}
+//import annotations.Between;
+//import annotations.GreaterThan;
+//import annotations.LongerThan;
+//
+//import java.time.LocalDateTime;
+//
+//public class A {
+//    public A() {
+//    }
+//
+//    @Between(from = 1, to = 10)
+//    int a = 5;
+//    @GreaterThan(num = -4)
+//    @Between(from = 3, to = 7)
+//    Integer b = 6;
+//    @LongerThan(length = 5)
+//    String name = "hello";
+//    slova slov = slova.poka;
+//    B aB = new B();
+//    LocalDateTime localDateTime = LocalDateTime.now();
+//
+//    @Override
+//    public String toString() {
+//        return "A{" +
+//                "a=" + a +
+//                ", b=" + b +
+//                ", name='" + name + '\'' +
+//                ", slov=" + slov +
+//                ", aB=" + aB +
+//                ", localDateTime=" + localDateTime +
+//                '}';
+//    }
+//}

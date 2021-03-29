@@ -24,8 +24,7 @@ public class SortCommand extends Command {
     @Override
     public void execute(String arguments) {
         if (arguments.length() == 0) {
-            //Сортировка по количеству
-            getCollectionManager().getCollection().sort(Comparator.comparingInt(StudyGroup::getStudentsCount));
+            this.getCollectionManager().sort();
         } else {
             System.out.println("Не верное количество аргументов");
         }

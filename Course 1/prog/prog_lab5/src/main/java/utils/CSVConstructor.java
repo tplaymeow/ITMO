@@ -8,14 +8,15 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class CSVConstructor {
-    public static String separator = ",";
+    private static String separator = ",";
+    private static String quotation = "'";
 
     public static void saveCSVFromData(ArrayList<ArrayList<String>> data, ArrayList<String> names, String fileName) {
         try {
             BufferedWriter fileWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
             for (ArrayList<String> objData:
                  data) {
-                fileWriter.write(String.join(separator, objData) + "\n");
+                fileWriter.write(quotation + String.join(quotation + separator + quotation, objData) + quotation + "\n");
             }
             fileWriter.close();
         } catch (IOException e) {
@@ -23,14 +24,16 @@ public class CSVConstructor {
         }
     }
 
-    public static ArrayList<ArrayList<String>> loadFromData(String fileName) {
+    public static ArrayList<ArrayList<String>> loadFromData(String fileName) throws IOException {
         ArrayList<ArrayList<String>> objects = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(fileName))) {
-            while (scanner.hasNext()) {
-                objects.add(new ArrayList<String>(Arrays.asList(scanner.nextLine().split(separator))));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+        String readLine;
+        while ((readLine = reader.readLine()) != null) {
+            ArrayList<String> object = new ArrayList<String>(Arrays.asList(readLine.split(separator)));
+            for (int i = 0; i < object.size(); i++) {
+                object.set(i, object.get(i).substring(quotation.length(), object.get(i).length() - quotation.length()));
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            objects.add(object);
         }
         return objects;
     }

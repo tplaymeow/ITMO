@@ -26,7 +26,7 @@ public class RemoveByIdCommand extends Command {
         if (arguments.split(" ").length == 1) {
             try {
                 int id = Integer.parseInt(arguments);
-                getCollectionManager().getCollection().removeIf(studyGroup -> studyGroup.getId() == id);
+                this.getCollectionManager().removeById(id);
             } catch (NumberFormatException e) {
                 System.out.println("Не верный формат числа");
             }

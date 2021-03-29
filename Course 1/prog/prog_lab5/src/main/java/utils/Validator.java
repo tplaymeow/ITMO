@@ -14,7 +14,42 @@ public class Validator {
         this.clazz = clazz;
     }
 
-    private Number objToNumber(Object object, Class type) {
+    public static boolean validateField(Field field, Object value) {
+        try {
+            Between annotation = field.getDeclaredAnnotation(Between.class);
+            if (objToNumber(value, field.getType()).doubleValue() < annotation.from() || objToNumber(value, field.getType()).doubleValue() > annotation.to())
+                return false;
+        } catch (NullPointerException ignored) { /* У поля нет этой аннотации */ }
+
+        try {
+            GreaterThan annotation = field.getDeclaredAnnotation(GreaterThan.class);
+            if (objToNumber(value, field.getType()).doubleValue() < annotation.num()) return false;
+        } catch (NullPointerException ignored) { /* У поля нет этой аннотации */ }
+
+        try {
+            LongerThan annotation = field.getDeclaredAnnotation(LongerThan.class);
+            if (value.toString().length() < annotation.length()) return false;
+        } catch (NullPointerException ignored) { /* У поля нет этой аннотации */ }
+
+        try {
+            ShorterThan annotation = field.getDeclaredAnnotation(ShorterThan.class);
+            if (value.toString().length() > annotation.length()) return false;
+        } catch (NullPointerException ignored) { /* У поля нет этой аннотации */ }
+
+        try {
+            NotEqualString annotation = field.getDeclaredAnnotation(NotEqualString.class);
+            if (value.toString().equals(annotation.string())) return false;
+        } catch (NullPointerException ignored) { /* У поля нет этой аннотации */ }
+
+        try {
+            NotNull annotation = field.getDeclaredAnnotation(NotNull.class);
+            if (value == null) return false;
+        } catch (NullPointerException ignored) { /* У поля нет этой аннотации */ }
+
+        return true;
+    }
+
+    private static Number objToNumber(Object object, Class type) {
         if (type.equals(byte.class) || type.equals(Byte.class)) {
             return (Byte) object;
         } else if (type.equals(short.class) || type.equals(Short.class)) {

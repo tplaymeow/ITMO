@@ -1,7 +1,6 @@
 package commands;
 
 import collectionManager.CollectionManager;
-import model.StudyGroup;
 
 /**
  * Класс команды count_greater_than_students_count. <b>count_greater_than_students_count studentsCount</b>: вывести количество элементов, значение поля studentsCount которых больше заданного
@@ -28,12 +27,7 @@ public class CountGreaterThanStudentsCountCommand extends Command {
         if (arguments.split(" ").length == 1) {
             try {
                 int inputCount = Integer.parseInt(arguments);
-                int count = 0;
-                for (StudyGroup group :
-                        getCollectionManager().getCollection()) {
-                    if (group.getStudentsCount() > inputCount) count++;
-                    System.out.println(count);
-                }
+                this.getCollectionManager().countGreaterThanStudentsCount(inputCount);
             } catch (NumberFormatException e) {
                 System.out.println("Не верный формат числа");
             }

@@ -25,11 +25,9 @@ public class RemoveAtCommand extends Command{
         if (arguments.split(" ").length == 1) {
             try {
                 int index = Integer.parseInt(arguments);
-                getCollectionManager().getCollection().remove(index);
+                getCollectionManager().removeAt(index);
             } catch (NumberFormatException e) {
                 System.out.println("Не верный формат числа");
-            } catch (IndexOutOfBoundsException e) {
-                System.out.println("Неверный индекс");
             }
         } else {
             System.out.println("Не верное количество аргументов");

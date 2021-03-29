@@ -1,7 +1,6 @@
 package commands;
 
 import collectionManager.CollectionManager;
-import model.StudyGroup;
 
 /**
  * Класс команды count_less_than_should_be_expelled. <b>count_less_than_should_be_expelled shouldBeExpelled</b>: вывести количество элементов, значение поля shouldBeExpelled которых меньше заданного
@@ -26,12 +25,7 @@ public class CountLessThanShouldBeExpelledCommand extends Command{
         if (arguments.split(" ").length == 1) {
             try {
                 int inputCount = Integer.parseInt(arguments);
-                int count = 0;
-                for (StudyGroup group :
-                        getCollectionManager().getCollection()) {
-                    if (group.getShouldBeExpelled() < inputCount) count++;
-                    System.out.println(count);
-                }
+                this.getCollectionManager().countLessThanShouldBeExpelled(inputCount);
             } catch (NumberFormatException e) {
                 System.out.println("Не верный формат числа");
             }

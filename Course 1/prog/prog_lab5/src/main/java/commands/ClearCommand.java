@@ -23,11 +23,9 @@ public class ClearCommand extends Command{
     @Override
     public void execute(String arguments) {
         if (arguments.length() == 0) {
-            this.getCollectionManager().getCollection().clear();
-            this.getCollectionManager().setDate(new Date());
+            this.getCollectionManager().clear();
         } else {
             System.out.println("Не верное количество аргументов");
         }
     }
-
 }

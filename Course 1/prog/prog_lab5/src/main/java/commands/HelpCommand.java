@@ -21,9 +21,7 @@ public class HelpCommand extends Command {
     @Override
     public void execute(String arguments) {
         if (arguments.length() == 0) {
-            for (Command command : this.getCollectionManager().getCommands()) {
-                System.out.println(command.getName() + " " + command.getDescription());
-            }
+            this.getCollectionManager().help();
         } else {
             System.out.println("Не верное количество аргументов");
         }

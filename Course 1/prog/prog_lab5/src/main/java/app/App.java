@@ -4,7 +4,9 @@ import collectionManager.CollectionManager;
 import commands.*;
 import model.StudyGroup;
 import utils.CSVConstructor;
+import utils.CustomBufferReader;
 import utils.Parser;
+import utils.Validator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,12 +38,28 @@ public class App {
         Parser<StudyGroup> parser = new Parser<>(StudyGroup.class);
 
         // Добаление коллекции из файла
+        collectionManager.setCollection(new LinkedList<>());
         try {
-            collectionManager.setCollection(new LinkedList<>());
             collectionManager.getCollection().addAll(parser.collectionFromData(CSVConstructor.loadFromData(inputFileName)));
+
+            boolean isValid = true;
+            Validator validator = new Validator(StudyGroup.class);
+
+            for (StudyGroup group:
+                 collectionManager.getCollection()) {
+                isValid = validator.validate(group);
+            }
+
+            if (!isValid) {
+                collectionManager.setCollection(new LinkedList<>());
+                System.out.println("Данные не коректны. Созданна пустая коллекция");
+            }
+
         } catch (InvocationTargetException | NoSuchMethodException | NoSuchFieldException | InstantiationException | IllegalAccessException e) {
             // TODO: что-то придумать, хотя это не должно высираться
             e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Файл не найден. Созданна пустая коллекция");
         }
 
         // Добавление команд в Collection Manager
@@ -64,7 +82,7 @@ public class App {
     }
 
     public Boolean interactive(InputStream stream) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+        CustomBufferReader reader = new CustomBufferReader(new InputStreamReader(stream));
         String request = "";
         String[] wordsRequest;
 
@@ -90,5 +108,9 @@ public class App {
                 }
             }
         }
+    }
+
+    public void print() {
+        System.out.println();
     }
 }

@@ -2,7 +2,6 @@ package commands;
 
 import collectionManager.CollectionManager;
 import model.Semester;
-import model.StudyGroup;
 
 /**
  * Класс команды filter_by_semester_enum. <b>filter_by_semester_enum semesterEnum</b>: вывести элементы, значение поля semesterEnum которых равно заданному
@@ -27,11 +26,7 @@ public class FilterBySemesterEnumCommand extends Command {
         if (arguments.split(" ").length == 1) {
             try {
                 Semester semester = Semester.valueOf(arguments);
-                for (StudyGroup group :
-                        getCollectionManager().getCollection()) {
-                    if (group.getSemesterEnum().equals(semester)) System.out.println(group);
-                }
-
+                this.getCollectionManager().filterBySemesterEnum(semester);
             } catch (IllegalArgumentException e) {
                 System.out.println("Не верное значение аргумента");
             }
