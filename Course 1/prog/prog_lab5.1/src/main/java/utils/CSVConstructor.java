@@ -46,11 +46,13 @@ public class CSVConstructor {
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
         String readLine;
         while ((readLine = reader.readLine()) != null) {
-            ArrayList<String> object = new ArrayList<String>(Arrays.asList(readLine.split(separator)));
-            for (int i = 0; i < object.size(); i++) {
-                object.set(i, object.get(i).substring(quotation.length(), object.get(i).length() - quotation.length()));
-            }
-            objects.add(object);
+            try {
+                ArrayList<String> object = new ArrayList<String>(Arrays.asList(readLine.split(separator)));
+                for (int i = 0; i < object.size(); i++) {
+                    object.set(i, object.get(i).substring(quotation.length(), object.get(i).length() - quotation.length()));
+                }
+                objects.add(object);
+            } catch (Exception ignored) { }
         }
         return objects;
     }

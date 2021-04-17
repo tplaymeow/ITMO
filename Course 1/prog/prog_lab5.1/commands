@@ -1,7 +1,2 @@
-clear
-add
-12
-12
-sAS
-sSa
-aaaaaa
+remove_at 0
+execute_script commandss

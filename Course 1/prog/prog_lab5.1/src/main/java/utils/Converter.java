@@ -153,11 +153,15 @@ public class Converter<T> {
         ArrayList<String> sortedNames = new ArrayList<>();
         ArrayList<String> sortedData = new ArrayList<>();
         Map<String, String> treeMap = new TreeMap<String, String>();
-        for (int i = 0; i < names.size(); i++) treeMap.put(names.get(i), data.get(i));
-        treeMap.forEach((name, value) -> {
-            sortedNames.add(name);
-            sortedData.add(value);
-        });
+        try {
+            for (int i = 0; i < names.size(); i++) treeMap.put(names.get(i), data.get(i));
+            treeMap.forEach((name, value) -> {
+                sortedNames.add(name);
+                sortedData.add(value);
+            });
+        } catch (IndexOutOfBoundsException e) {
+            throw new ValidationException();
+        }
 
         for (int i = 0; i < data.size(); i++) {
             String name = sortedNames.get(i);

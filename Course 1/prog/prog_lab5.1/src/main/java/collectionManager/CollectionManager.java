@@ -4,12 +4,16 @@ import app.App;
 import commands.Command;
 import exceptions.AnnotationException;
 import exceptions.EndOfFileException;
-import model.*;
+import model.Semester;
+import model.StudyGroup;
 import utils.Converter;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.LinkedList;
 
 /**
  * Класс предназначенный для работы с коллекцией
@@ -20,7 +24,8 @@ public class CollectionManager {
     private Date date;
     private App app;
 
-    private ArrayList<String> openScripts = new ArrayList<>();
+    private static ArrayList<String> openScripts = new ArrayList<>();
+    private static int recursionsCount = 1;
 
     public CollectionManager(App app) {
         this.app = app;
@@ -86,10 +91,12 @@ public class CollectionManager {
      * Реализация команды {@link commands.InfoCommand}
      */
     public void info() {
+        app.setFileMod(false);
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss");
         app.println("Тип: " + StudyGroup.class);
         app.println("Время создания: " + formatter.format(date));
         app.println("Кол-во элементов: " + collection.size());
+        app.setFileMod(true);
     }
 
     /**
@@ -121,19 +128,63 @@ public class CollectionManager {
     /**
      * Реализация команды {@link commands.ExecuteScriptCommand}
      */
+//    public void executeScript(String fileName) {
+//        try {
+//            if (findCycles(fileName)) {
+//                app.setFileMod(true);
+//                app.interactive(new FileInputStream(fileName));
+//                app.setFileMod(false);
+//            } else {
+//                app.println("В скрипте присутствуют циклы. Выполнение не возможно");
+//            }
+//        } catch (FileNotFoundException e) {
+//            app.setFileMod(false);
+//            app.println("Файл " + fileName + " не найден");
+//        } catch (IOException e) {
+//            app.println("Ошибка ввода " + e.getMessage());
+//        } finally {
+//            openScripts.clear();
+//        }
+//    }
+
     public void executeScript(String fileName) {
         try {
-            openScripts.clear();
-            if (findCycles(fileName)) {
-                app.setFileMod(true);
-                app.interactive(new FileInputStream(fileName));
-                app.setFileMod(false);
-            } else {
-                app.println("В скрипте присутствуют циклы. Выполнение не возможно");
+            if (openScripts.isEmpty()) {
+                openScripts.add(fileName);
+            } else if (openScripts.contains(fileName) && recursionsCount == 0) {
+                openScripts.clear();
+                openScripts.add(fileName);
+                recursionsCount++;
+            } else if (openScripts.get(0).equals(fileName)) {
+                openScripts.clear();
+                openScripts.add(fileName);
+                recursionsCount++;
             }
-        } catch (FileNotFoundException e) {
+
+            if (recursionsCount > 10) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                while (true) {
+                    System.out.print("В программе присутствует рекрсия. Хотите выполнить еще 10 циклов? [Y/N] ");
+                    String ans = reader.readLine();
+                    if (ans.equals("Y")) {
+                        recursionsCount = 1;
+                        openScripts.clear();
+                        openScripts.add(fileName);
+                        break;
+                    } else if (ans.equals("N")) {
+                        openScripts.clear();
+                        recursionsCount = 1;
+                        return;
+                    } else {
+                        System.out.println("Не коректный ответ");
+                    }
+                }
+            }
+
+            app.setFileMod(true);
+            app.interactive(new FileInputStream(fileName));
             app.setFileMod(false);
-            app.println("Файл " + fileName + " не найден");
+
         } catch (IOException e) {
             app.println("Ошибка ввода " + e.getMessage());
         }
@@ -219,23 +270,26 @@ public class CollectionManager {
      * @param argument имя файла
      */
     private boolean findCycles(String argument) throws IOException {
-        if (openScripts.contains(argument)) return false;
-            BufferedReader reader = new BufferedReader(new FileReader(argument));
+        if (openScripts.contains(argument)) {
             openScripts.add(argument);
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.split(" ", 2)[0].equals("execute_script")) {
-                    if (!findCycles(line.split(" ", 2)[1])) {
-                        reader.close();
-                        return false;
-                    }
-                } else if (line.equals("exit")) {
+            return false;
+        }
+        BufferedReader reader = new BufferedReader(new FileReader(argument));
+        openScripts.add(argument);
+        String line;
+        while ((line = reader.readLine()) != null) {
+            if (line.split(" ", 2)[0].equals("execute_script")) {
+                if (!findCycles(line.split(" ", 2)[1])) {
                     reader.close();
-                    return true;
+                    return false;
                 }
+            } else if (line.equals("exit")) {
+                reader.close();
+                return true;
             }
-            reader.close();
-            return true;
+        }
+        reader.close();
+        return true;
     }
 
     // Гетеры и сетеры
