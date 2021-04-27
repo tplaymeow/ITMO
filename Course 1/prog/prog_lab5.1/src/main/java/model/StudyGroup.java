@@ -1,16 +1,20 @@
 package model;
 
-import annotations.GreaterThan;
-import annotations.NotEqualString;
-import annotations.NotNull;
+import annotations.converterAnnotations.AutomaticGenerated;
+import annotations.converterAnnotations.NotWrite;
+import annotations.validatorAnnotations.GreaterThan;
+import annotations.validatorAnnotations.NotEqualString;
+import annotations.validatorAnnotations.NotNull;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.Objects;
 
-public class StudyGroup {
+public class StudyGroup implements Comparable<StudyGroup> {
+    @NotWrite
+    @AutomaticGenerated
     private static long CreatedStudyGroupsCount = 0;
     @GreaterThan
+    @AutomaticGenerated
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     @NotNull
     @NotEqualString(string = "")
@@ -18,7 +22,8 @@ public class StudyGroup {
     @NotNull
     private Coordinates coordinates; //Поле не может быть null
     @NotNull
-    private java.time.LocalDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    @AutomaticGenerated
+    private LocalDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
     @GreaterThan
     private int studentsCount; //Значение поля должно быть больше 0
     @GreaterThan
@@ -34,7 +39,6 @@ public class StudyGroup {
         CreatedStudyGroupsCount += 1;
     }
 
-    //TODO: добавить конструктор без даты
     public StudyGroup(String name,
                       Coordinates coordinates,
                       int studentsCount,
@@ -62,7 +66,8 @@ public class StudyGroup {
     }
 
     public StudyGroup() {
-
+        this.id = CreatedStudyGroupsCount;
+        this.creationDate = LocalDateTime.now();
     }
 
     public static long getCreatedStudyGroupsCount() {
@@ -118,5 +123,23 @@ public class StudyGroup {
                 ", semesterEnum=" + semesterEnum +
                 ", groupAdmin=" + groupAdmin +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StudyGroup group = (StudyGroup) o;
+        return id == group.id && studentsCount == group.studentsCount && shouldBeExpelled == group.shouldBeExpelled && Objects.equals(name, group.name) && Objects.equals(coordinates, group.coordinates) && Objects.equals(creationDate, group.creationDate) && formOfEducation == group.formOfEducation && semesterEnum == group.semesterEnum && Objects.equals(groupAdmin, group.groupAdmin);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, coordinates, creationDate, studentsCount, shouldBeExpelled, formOfEducation, semesterEnum, groupAdmin);
+    }
+
+    @Override
+    public int compareTo(StudyGroup o) {
+        return Integer.compare(this.studentsCount, o.studentsCount);
     }
 }
