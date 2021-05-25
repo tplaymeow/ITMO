@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class StudyGroup implements Comparable<StudyGroup> {
     @AutomaticGenerated
     @GreaterThan
-    private long id;
+    private final long id;
     @NotNull
     @NotEqualString
     private String name;
@@ -19,7 +19,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
     private Coordinates coordinates;
     @NotNull
     @AutomaticGenerated
-    private java.time.LocalDateTime creationDate;
+    private final java.time.LocalDateTime creationDate;
     @GreaterThan
     private int studentsCount;
     @GreaterThan

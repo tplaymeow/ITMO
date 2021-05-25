@@ -13,6 +13,6 @@ public class FilterCommand extends Command {
     @Override
     public Response execute(CommandDescription commandDescription) {
         FilterCommandDescription filter = (FilterCommandDescription) commandDescription;
-        return new Response(getCollectionManager().fillter(filter.getSemester()), true);
+        return new Response(getCollectionManager().filter(filter.getSemester()), true);
     }
 }

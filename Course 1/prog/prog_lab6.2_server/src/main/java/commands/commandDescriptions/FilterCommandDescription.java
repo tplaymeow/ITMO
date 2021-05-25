@@ -4,7 +4,7 @@ import exceptions.BadArgumentException;
 import model.Semester;
 
 public class FilterCommandDescription extends CommandDescription {
-    private Semester semester;
+    private final Semester semester;
 
     public FilterCommandDescription(String value) throws BadArgumentException {
         super("filter_by_semester_enum");

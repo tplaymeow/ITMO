@@ -10,9 +10,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class CollectionManager {
-    private LinkedList<StudyGroup> collection;
+    private final LinkedList<StudyGroup> collection;
 
-    private Date date;
+    private final Date date;
     private final App app;
 
     public CollectionManager(App app) {
@@ -47,11 +47,12 @@ public class CollectionManager {
     }
 
     public String show() {
-        return collection.stream().map(Objects::toString).collect(Collectors.joining("\n"));
+        return collection.stream()
+                .map(Objects::toString)
+                .collect(Collectors.joining("\n"));
     }
 
     public void addIfMin(StudyGroup group) {
-        System.out.println(group.compareTo(Collections.min(collection)));
         if (collection.size() == 0 || group.compareTo(Collections.min(collection)) < 0) {
             collection.add(group);
         }
@@ -59,6 +60,13 @@ public class CollectionManager {
 
     public void sort() {
         Collections.sort(collection);
+    }
+
+    public String filter(Semester semester) {
+        return collection.stream()
+                .filter(group -> group.getSemesterEnum().equals(semester))
+                .map(StudyGroup::toString)
+                .collect(Collectors.joining("\n"));
     }
 
     // Delegate methods
@@ -88,10 +96,6 @@ public class CollectionManager {
 
     public String countGreaterThan(int num) {
         return String.valueOf(collection.stream().filter(group -> group.getStudentsCount() > num).count());
-    }
-
-    public String fillter(Semester semester) {
-        return collection.stream().filter(group -> group.getSemesterEnum().equals(semester)).map(StudyGroup::toString).collect(Collectors.joining("\n"));
     }
 
     public LinkedList<StudyGroup> getCollection() {

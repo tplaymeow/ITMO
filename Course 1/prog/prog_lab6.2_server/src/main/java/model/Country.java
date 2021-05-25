@@ -7,5 +7,5 @@ public enum Country implements Serializable {
     GERMANY,
     FRANCE,
     CHINA,
-    SOUTH_KOREA;
+    SOUTH_KOREA
 }

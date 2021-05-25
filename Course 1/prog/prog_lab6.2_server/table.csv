@@ -1,0 +1,2 @@
+'id','name','coordinates/x','coordinates/y','creationDate','studentsCount','shouldBeExpelled','formOfEducation','semesterEnum','groupAdmin/name','groupAdmin/passportID','groupAdmin/eyeColor','groupAdmin/hairColor','groupAdmin/nationality','groupAdmin/location/x','groupAdmin/location/y','groupAdmin/location/z','groupAdmin/location/name','instancesCreated'
+'0','group','12','12.0','2021-05-25T09:41:54.011','23','11','DISTANCE_EDUCATION','FIRST','Roman','311703','BLACK','BLACK','GERMANY','45.0','43','22','ITMO','1'

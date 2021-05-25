@@ -17,12 +17,7 @@ import java.util.Arrays;
 import java.util.function.Consumer;
 
 public class CommandDescriptionFactory {
-    public static CommandDescription getCommandDescription(String line, InputStream inputStream, Consumer<String> printer) throws BadArgumentException, NoCommandException, AnnotationException, IOException, InstantiationException, EndOfFileException, IllegalAccessException {
-        line = line.replaceAll(" +", " ").trim();
-        String commandName = line.split(" ", 2)[0];
-        String argument;
-        try { argument = line.split(" ", 2)[1]; }
-        catch (IndexOutOfBoundsException e) { argument = ""; }
+    public static CommandDescription getCommandDescription(String commandName, String argument, InputStream inputStream, Consumer<String> printer) throws BadArgumentException, NoCommandException, AnnotationException, IOException, InstantiationException, EndOfFileException, IllegalAccessException {
 
         if (commandName.equals("help")) return new HelpCommandDescription(argument);
         else if (commandName.equals("info")) return new InfoCommandDescription(argument);

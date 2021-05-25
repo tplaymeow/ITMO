@@ -8,6 +8,7 @@ import exceptions.ConvertInstructionException;
 import managers.CollectionManager;
 import managers.network.NetworkManagerInterface;
 import model.*;
+import org.apache.logging.log4j.Logger;
 import response.Response;
 import utils.CSVConstructor;
 import utils.Converter;
@@ -26,8 +27,10 @@ public class App {
     private final ArrayList<Command> commands = new ArrayList<>();
     private final NetworkManagerInterface<CommandDescription, Response> network;
     private final InputStream inputStream;
+    private Logger logger;
 
-    public App(String fileName, NetworkManagerInterface<CommandDescription, Response> network, InputStream inputStream) {
+    public App(String fileName, NetworkManagerInterface<CommandDescription, Response> network, InputStream inputStream, Logger logger) {
+        this.logger = logger;
         this.inputStream = inputStream;
         this.network = network;
         this.fileName = fileName;
@@ -118,16 +121,20 @@ public class App {
             CSVConstructor.saveCSVFromData(data, fileName);
         } catch (CantWriteException e) {
             println("Ошибка " + e.getMessage());
-            println("Выберите другой файл (save filename)");
         }
     }
 
     public void println(String string) {
-        System.out.println(string);
+        if (Objects.nonNull(logger)) logger.info(string);
+        else System.out.println(string);
     }
 
-    // Getter
+    // Getter and Setters
     public List<Command> getCommands() {
         return Collections.unmodifiableList(commands);
+    }
+
+    public void setLogger(Logger logger) {
+        this.logger = logger;
     }
 }
