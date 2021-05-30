@@ -1,6 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
+import exceptions.ArgumentsCountException;
 import model.Semester;
 
 /**
@@ -22,14 +23,11 @@ public class FilterBySemesterEnumCommand extends Command {
      * @param arguments аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.split(" ").length == 1) {
-            try {
-                Semester semester = Semester.valueOf(arguments);
-                this.getCollectionManager().filterBySemesterEnum(semester);
-            } catch (IllegalArgumentException e) {
-                System.out.println("Не верное значение аргумента");
-            }
-        } else System.out.println("Не верное количество аргументов");
+    public void execute(String arguments) throws ArgumentsCountException, IllegalArgumentException {
+        if (argumentsCountIsEqual(arguments, 1)) {
+            Semester semester = Semester.valueOf(arguments);
+            this.getCollectionManager().filterBySemesterEnum(semester);
+        } else
+            throw new ArgumentsCountException();
     }
 }

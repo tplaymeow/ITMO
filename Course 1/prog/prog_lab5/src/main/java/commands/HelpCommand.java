@@ -1,6 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды help. <b>help</b>: Выводит информацию о всех командах
@@ -19,11 +20,11 @@ public class HelpCommand extends Command {
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.length() == 0) {
+    public void execute(String arguments) throws ArgumentsCountException {
+        if (argumentsCountIsEqual(arguments, 0)) {
             this.getCollectionManager().help();
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }

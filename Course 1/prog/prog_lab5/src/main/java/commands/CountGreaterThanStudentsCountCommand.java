@@ -1,6 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды count_greater_than_students_count. <b>count_greater_than_students_count studentsCount</b>: вывести количество элементов, значение поля studentsCount которых больше заданного
@@ -23,16 +24,12 @@ public class CountGreaterThanStudentsCountCommand extends Command {
      * @param arguments аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.split(" ").length == 1) {
-            try {
-                int inputCount = Integer.parseInt(arguments);
-                this.getCollectionManager().countGreaterThanStudentsCount(inputCount);
-            } catch (NumberFormatException e) {
-                System.out.println("Не верный формат числа");
-            }
+    public void execute(String arguments) throws ArgumentsCountException, NumberFormatException {
+        if (argumentsCountIsEqual(arguments, 1)) {
+            int inputCount = Integer.parseInt(arguments);
+            this.getCollectionManager().countGreaterThanStudentsCount(inputCount);
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }

@@ -1,9 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
-import model.StudyGroup;
-
-import java.util.Iterator;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды remove_by_id. <b>remove_by_id id</b>: удалить элемент из коллекции по его id
@@ -22,16 +20,12 @@ public class RemoveByIdCommand extends Command {
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.split(" ").length == 1) {
-            try {
-                int id = Integer.parseInt(arguments);
-                this.getCollectionManager().removeById(id);
-            } catch (NumberFormatException e) {
-                System.out.println("Не верный формат числа");
-            }
+    public void execute(String arguments) throws ArgumentsCountException, NumberFormatException {
+        if (argumentsCountIsEqual(arguments, 1)) {
+            int id = Integer.parseInt(arguments);
+            this.getCollectionManager().removeById(id);
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }

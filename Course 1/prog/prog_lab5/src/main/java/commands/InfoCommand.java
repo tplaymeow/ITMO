@@ -1,9 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
-import model.StudyGroup;
-
-import java.text.SimpleDateFormat;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды info. <b>info</b>: Выводит информацию о колекции
@@ -22,11 +20,11 @@ public class InfoCommand extends Command {
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.length() == 0) {
+    public void execute(String arguments) throws ArgumentsCountException {
+        if (argumentsCountIsEqual(arguments, 0)) {
             this.getCollectionManager().info();
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }

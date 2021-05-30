@@ -1,9 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
-import model.StudyGroup;
-
-import java.util.Comparator;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды sort. <b>sort</b>: отсортировать коллекцию в естественном порядке
@@ -22,11 +20,11 @@ public class SortCommand extends Command {
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.length() == 0) {
+    public void execute(String arguments) throws ArgumentsCountException {
+        if (argumentsCountIsEqual(arguments, 0)) {
             this.getCollectionManager().sort();
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }

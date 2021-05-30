@@ -2,6 +2,7 @@ package commands;
 
 
 import collectionManager.CollectionManager;
+import exceptions.ArgumentsCountException;
 
 import java.util.Objects;
 
@@ -39,7 +40,7 @@ public abstract class Command {
      * Абстрактный метод, отвечающий за исполнение команды
      * @param arguments  аргументы команды в виде строки
      */
-    abstract public void execute(String arguments);
+    abstract public void execute(String arguments) throws ArgumentsCountException;
 
     /**
      * Метод, возвращающий значение {@link Command#name}
@@ -63,6 +64,17 @@ public abstract class Command {
      */
     public CollectionManager getCollectionManager() {
         return collectionManager;
+    }
+
+    protected final boolean argumentIsFilename(String argument) {
+        if (argument.startsWith("'") && argument.endsWith("'")) {
+            return true;
+        } else return argumentsCountIsEqual(argument, 1);
+    }
+
+    protected final boolean argumentsCountIsEqual(String arguments, int count) {
+        if (arguments.equals("")) return count == 0;
+        else return arguments.split(" ").length == count;
     }
 
     @Override

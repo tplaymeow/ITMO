@@ -1,2 +1,3 @@
-remove_at 0
-execute_script commandss
+info
+execute_script commands
+info

@@ -1,6 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды update. <b>update id {element}</b>: обновить значение элемента коллекции, id которого равен заданному
@@ -19,7 +20,12 @@ public class UpdateCommand extends Command {
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        //TODO: сделать что-то
+    public void execute(String arguments) throws NumberFormatException, ArgumentsCountException {
+        if (argumentsCountIsEqual(arguments, 1)) {
+            int index = Integer.parseInt(arguments);
+            getCollectionManager().update(index);
+        } else {
+            throw new ArgumentsCountException();
+        }
     }
 }

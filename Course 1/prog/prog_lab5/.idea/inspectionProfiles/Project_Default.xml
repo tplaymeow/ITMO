@@ -5,7 +5,7 @@
       <option name="EXCLUDE_ANNOS">
         <value>
           <list size="1">
-            <item index="0" class="java.lang.String" itemvalue="annotations.NotNull" />
+            <item index="0" class="java.lang.String" itemvalue="annotations.NotEqualString" />
           </list>
         </value>
       </option>

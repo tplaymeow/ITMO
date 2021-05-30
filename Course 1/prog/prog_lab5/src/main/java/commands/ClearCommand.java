@@ -1,8 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
-
-import java.util.Date;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды clear. <b>clear</b>: очистить коллекцию
@@ -21,11 +20,11 @@ public class ClearCommand extends Command{
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.length() == 0) {
+    public void execute(String arguments) throws ArgumentsCountException {
+        if (argumentsCountIsEqual(arguments, 0)) {
             this.getCollectionManager().clear();
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }

@@ -1,8 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
-import model.Semester;
-import model.StudyGroup;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды remove_at. <b>remove_at index</b>: удалить элемент, находящийся в заданной позиции коллекции (index)
@@ -21,16 +20,12 @@ public class RemoveAtCommand extends Command{
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.split(" ").length == 1) {
-            try {
-                int index = Integer.parseInt(arguments);
-                getCollectionManager().removeAt(index);
-            } catch (NumberFormatException e) {
-                System.out.println("Не верный формат числа");
-            }
+    public void execute(String arguments) throws ArgumentsCountException, NumberFormatException {
+        if (argumentsCountIsEqual(arguments, 1)) {
+            int index = Integer.parseInt(arguments);
+            getCollectionManager().removeAt(index);
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }

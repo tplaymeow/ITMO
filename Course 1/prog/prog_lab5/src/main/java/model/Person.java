@@ -1,9 +1,9 @@
 package model;
 
-import annotations.LongerThan;
-import annotations.NotEqualString;
-import annotations.ShorterThan;
-import annotations.NotNull;
+import annotations.validatorAnnotations.LongerThan;
+import annotations.validatorAnnotations.NotEqualString;
+import annotations.validatorAnnotations.NotNull;
+import annotations.validatorAnnotations.ShorterThan;
 
 import java.util.Objects;
 
@@ -48,5 +48,17 @@ public class Person {
     }
 
     public Person() {
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", passportID='" + passportID + '\'' +
+                ", eyeColor=" + eyeColor +
+                ", hairColor=" + hairColor +
+                ", nationality=" + nationality +
+                ", location=" + location +
+                '}';
     }
 }

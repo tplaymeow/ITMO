@@ -1,6 +1,8 @@
 package commands;
 
 import collectionManager.CollectionManager;
+import exceptions.ArgumentsCountException;
+import model.Semester;
 
 /**
  * Класс команды execute_script. <b>execute_script file_name</b>: считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.
@@ -21,7 +23,10 @@ public class ExecuteScriptCommand extends Command{
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        //TODO: сделать что-то
+    public void execute(String arguments) throws ArgumentsCountException {
+        if (argumentIsFilename(arguments)) {
+            this.getCollectionManager().executeScript(arguments);
+        } else
+            throw new ArgumentsCountException();
     }
 }

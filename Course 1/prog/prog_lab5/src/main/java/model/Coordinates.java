@@ -1,7 +1,7 @@
 package model;
 
-import annotations.GreaterThan;
-import annotations.NotNull;
+import annotations.validatorAnnotations.GreaterThan;
+import annotations.validatorAnnotations.NotNull;
 
 public class Coordinates {
     @NotNull
@@ -19,5 +19,13 @@ public class Coordinates {
     }
 
     public Coordinates() {
+    }
+
+    @Override
+    public String toString() {
+        return "Coordinates{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

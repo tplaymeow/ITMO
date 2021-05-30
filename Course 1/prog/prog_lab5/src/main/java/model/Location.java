@@ -1,6 +1,6 @@
 package model;
 
-import annotations.NotNull;
+import annotations.validatorAnnotations.NotNull;
 
 import java.util.Objects;
 
@@ -18,9 +18,18 @@ public class Location {
         this.y = Objects.requireNonNull(y, "Y can't be null");
         this.z = z;
         this.name = Objects.requireNonNull(name, "Name can't be null");
-        ;
     }
 
     public Location() {
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

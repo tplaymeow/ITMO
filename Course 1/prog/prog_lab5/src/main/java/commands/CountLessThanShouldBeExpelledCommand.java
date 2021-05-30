@@ -1,6 +1,7 @@
 package commands;
 
 import collectionManager.CollectionManager;
+import exceptions.ArgumentsCountException;
 
 /**
  * Класс команды count_less_than_should_be_expelled. <b>count_less_than_should_be_expelled shouldBeExpelled</b>: вывести количество элементов, значение поля shouldBeExpelled которых меньше заданного
@@ -21,16 +22,12 @@ public class CountLessThanShouldBeExpelledCommand extends Command{
      * @param arguments  аргументы команды в виде строки
      */
     @Override
-    public void execute(String arguments) {
-        if (arguments.split(" ").length == 1) {
-            try {
-                int inputCount = Integer.parseInt(arguments);
-                this.getCollectionManager().countLessThanShouldBeExpelled(inputCount);
-            } catch (NumberFormatException e) {
-                System.out.println("Не верный формат числа");
-            }
+    public void execute(String arguments) throws ArgumentsCountException, NumberFormatException {
+        if (argumentsCountIsEqual(arguments, 1)) {
+            int inputCount = Integer.parseInt(arguments);
+            this.getCollectionManager().countLessThanShouldBeExpelled(inputCount);
         } else {
-            System.out.println("Не верное количество аргументов");
+            throw new ArgumentsCountException();
         }
     }
 }
