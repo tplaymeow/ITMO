@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66f63364-09fc-4dfc-8e03-c9962b933f94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/converterAnnotations/AutomaticGenerated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/converterAnnotations/NotWrite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/validatorAnnotations/Between.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/validatorAnnotations/GreaterThan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/validatorAnnotations/LongerThan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/validatorAnnotations/NotEqualString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/validatorAnnotations/NotNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/annotations/validatorAnnotations/ShorterThan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/app/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/CommandDescriptionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/AddCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/AddIfMinCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/ClearCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/CommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/CountGraterThanCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/CountLessThanCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/FilterCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/HelpCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/InfoCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/RemoveAtCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/RemoveByIdCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/ShowCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/SortCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/commands/commandDescriptions/UpdateCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/exceptions/AnnotationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/exceptions/BadArgumentException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/exceptions/ConvertInstructionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/exceptions/EndOfFileException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/exceptions/NoCommandException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/exceptions/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/managers/network/DatagramNetworkManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/managers/network/NetworkManagerInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/FormOfEducation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/Semester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/model/userInput/StudyGroupUserInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/response/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/utils/CheckedFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/utils/Converter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/java/utils/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab6.2_client/src/main/resources/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/converterAnnotations/AutomaticGenerated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/converterAnnotations/NotWrite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/Between.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/GreaterThan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/LongerThan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/NotEqualString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/NotNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/ShorterThan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/AddCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/AddIfMinCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/ClearCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/CommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/CountGraterThanCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/CountLessThanCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/FilterCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/HelpCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/InfoCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/RemoveAtCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/RemoveByIdCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/ShowCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/SortCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/UpdateCommandDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/AddIfMinCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/ClearCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/CountGreaterThanCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/CountLessThanCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/FilterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/HelpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/RemoveAtCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/RemoveByIdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/ShowCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/SortCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/commands/UpdateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/AnnotationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/ArgumentsCountException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/BadArgumentException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/CantWriteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/ConvertInstructionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/EndOfFileException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NoCommandException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/managers/CollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/managers/network/DatagramNetworkManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/managers/network/NetworkManagerInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/FormOfEducation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Semester.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/StudyGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/userInput/StudyGroupUserInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/response/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CSVConstructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CheckedFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Converter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1s9By8CBtqpLSAj8s8PcElSEQu5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/model" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="commands.commands" />
+      <recent name="commands.commandDescriptions" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/model" />
+      <recent name="$PROJECT_DIR$/src/main/java/exceptions" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="prog_lab6.2_server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66f63364-09fc-4dfc-8e03-c9962b933f94" name="Default Changelist" comment="" />
+      <created>1620275179289</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620275179289</updated>
+      <workItem from="1620275180396" duration="310000" />
+      <workItem from="1620486652934" duration="20112000" />
+      <workItem from="1620604856375" duration="37694000" />
+      <workItem from="1621437014339" duration="7845000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="208" y="28" key="#Project_Structure" timestamp="1620604868132">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="208" y="28" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1620604868132" />
+    <state x="533" y="160" key="#com.intellij.ide.util.MemberChooser" timestamp="1621438534083">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="160" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1621438534083" />
+    <state x="268" y="378" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1620636319419">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="268" y="378" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1620636319419" />
+    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620717160821">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1620717160821" />
+    <state width="720" height="214" key="GridCell.Tab.0.bottom" timestamp="1622111536563">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="720" height="214" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1622111536563" />
+    <state width="699" height="172" key="GridCell.Tab.0.bottom/0.25.1440.801@0.25.1440.801" timestamp="1620814843950" />
+    <state width="720" height="214" key="GridCell.Tab.0.center" timestamp="1622111536561">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="720" height="214" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1622111536561" />
+    <state width="699" height="172" key="GridCell.Tab.0.center/0.25.1440.801@0.25.1440.801" timestamp="1620814843948" />
+    <state width="720" height="214" key="GridCell.Tab.0.left" timestamp="1622111536559">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="720" height="214" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1622111536559" />
+    <state width="699" height="172" key="GridCell.Tab.0.left/0.25.1440.801@0.25.1440.801" timestamp="1620814843945" />
+    <state width="720" height="214" key="GridCell.Tab.0.right" timestamp="1622111536562">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="720" height="214" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1622111536562" />
+    <state width="699" height="172" key="GridCell.Tab.0.right/0.25.1440.801@0.25.1440.801" timestamp="1620814843949" />
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1620814843937">
+      <screen x="0" y="25" width="1440" height="801" />
+    </state>
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1620713557708" />
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.25.1440.801@0.25.1440.801" timestamp="1620814843937" />
+    <state width="1398" height="304" key="GridCell.Tab.1.center" timestamp="1620814843936">
+      <screen x="0" y="25" width="1440" height="801" />
+    </state>
+    <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1620713557707" />
+    <state width="1398" height="304" key="GridCell.Tab.1.center/0.25.1440.801@0.25.1440.801" timestamp="1620814843936" />
+    <state width="1398" height="304" key="GridCell.Tab.1.left" timestamp="1620814843935">
+      <screen x="0" y="25" width="1440" height="801" />
+    </state>
+    <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1620713557706" />
+    <state width="1398" height="304" key="GridCell.Tab.1.left/0.25.1440.801@0.25.1440.801" timestamp="1620814843935" />
+    <state width="1398" height="304" key="GridCell.Tab.1.right" timestamp="1620814843937">
+      <screen x="0" y="25" width="1440" height="801" />
+    </state>
+    <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1620713557708" />
+    <state width="1398" height="304" key="GridCell.Tab.1.right/0.25.1440.801@0.25.1440.801" timestamp="1620814843937" />
+  </component>
+</project>
