@@ -1,6 +1,5 @@
 package app;
 
-import commands.CommandDescriptionFactory;
 import commands.commandDescriptions.CommandDescription;
 import exceptions.AnnotationException;
 import exceptions.BadArgumentException;
@@ -10,7 +9,6 @@ import managers.network.NetworkManagerInterface;
 import response.Response;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

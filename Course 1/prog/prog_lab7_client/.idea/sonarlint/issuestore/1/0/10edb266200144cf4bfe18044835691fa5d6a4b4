@@ -1,0 +1,17 @@
+
+n	java:S135W"YReduce the total number of break and continue statements in this loop to use at most one.(„Ëš¸
+s	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ
+P
+java:S1141)"5Extract this nested try block into a separate method.(½¢’øÿÿÿÿ
+D
+java:S1121X".Extract the assignment out of this expression.(ğËõ
+1
+java:S36269"Remove this redundant jump.(ÉŠ©ƒ
+W
+java:S1854Z"BRemove this useless assignment to local variable "commandDidSend".(âËs
+W
+java:S1854a"BRemove this useless assignment to local variable "commandDidSend".(âËs
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 53 to the 15 allowed.(ïŒÖëüÿÿÿÿ
+=	java:S108Q")Either remove or fill this block of code.(”ã‰G
+N	java:S106k"9Replace this use of System.out or System.err by a logger.(±¤ª¹
