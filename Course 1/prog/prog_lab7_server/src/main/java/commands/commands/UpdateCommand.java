@@ -1,10 +1,7 @@
 package commands.commands;
 
-import commands.commandDescriptions.AddCommandDescription;
 import commands.commandDescriptions.CommandDescription;
-import commands.commandDescriptions.UpdateCommandDescription;
 import managers.CollectionManager;
-import model.StudyGroup;
 import response.Response;
 
 public class UpdateCommand extends Command {
@@ -14,8 +11,6 @@ public class UpdateCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        UpdateCommandDescription update = (UpdateCommandDescription) commandDescription;
-        getCollectionManager().update(update.getId(), new StudyGroup(update.getStudyGroupUserInput()));
         return new Response("Команда выполнена.", true);
     }
 }

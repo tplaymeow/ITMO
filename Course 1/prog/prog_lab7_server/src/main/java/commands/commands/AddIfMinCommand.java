@@ -1,7 +1,5 @@
 package commands.commands;
 
-import commands.commandDescriptions.AddCommandDescription;
-import commands.commandDescriptions.AddIfMinCommandDescription;
 import commands.commandDescriptions.CommandDescription;
 import managers.CollectionManager;
 import model.StudyGroup;
@@ -14,7 +12,7 @@ public class AddIfMinCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        getCollectionManager().addIfMin(new StudyGroup(((AddIfMinCommandDescription) commandDescription).getStudyGroupUserInput()));
+        getCollectionManager().addIfMin((StudyGroup) commandDescription.getObject());
         return new Response("Команда выполнена.", true);
     }
 }

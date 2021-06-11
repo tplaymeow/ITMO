@@ -1,9 +1,9 @@
 package commands.commands;
 
-import commands.commandDescriptions.AddCommandDescription;
 import commands.commandDescriptions.CommandDescription;
 import managers.CollectionManager;
 import model.StudyGroup;
+import model.userInput.StudyGroupUserInput;
 import response.Response;
 
 public class AddCommand extends Command {
@@ -13,7 +13,7 @@ public class AddCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        getCollectionManager().add(new StudyGroup(((AddCommandDescription) commandDescription).getStudyGroupUserInput()));
+        getCollectionManager().add(new StudyGroup((StudyGroupUserInput) commandDescription.getObject()));
         return new Response("Команда выполнена.", true);
     }
 }

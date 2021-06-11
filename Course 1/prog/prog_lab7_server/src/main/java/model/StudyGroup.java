@@ -1,46 +1,63 @@
 package model;
 
+import annotations.Id;
+import annotations.Table;
+import annotations.constraints.MinLength;
+import annotations.constraints.NoNull;
 import annotations.converterAnnotations.AutomaticGenerated;
+import annotations.relationshipType.Element;
 import annotations.validatorAnnotations.GreaterThan;
 import annotations.validatorAnnotations.NotEqualString;
 import annotations.validatorAnnotations.NotNull;
 import model.userInput.StudyGroupUserInput;
 
 import java.time.LocalDateTime;
-
+@Table("groups")
 public class StudyGroup implements Comparable<StudyGroup> {
+    @Id
     @AutomaticGenerated
     @GreaterThan
-    private final long id;
+    private final int id;
+    @Element
+    @NoNull
+    @MinLength(1)
     @NotNull
     @NotEqualString
     private String name;
+    @Element
+    @NoNull
     @NotNull
     private Coordinates coordinates;
-    @NotNull
-    @AutomaticGenerated
-    private final java.time.LocalDateTime creationDate;
+    @Element
+    @annotations.constraints.GreaterThan(0)
     @GreaterThan
     private int studentsCount;
+    @Element
+    @annotations.constraints.GreaterThan(0)
     @GreaterThan
     private int shouldBeExpelled;
+    @Element
+    @NoNull
     @NotNull
     private FormOfEducation formOfEducation;
+    @Element
+    @NoNull
     @NotNull
     private Semester semesterEnum;
+    @Element
+    @NoNull
     @NotNull
     private Person groupAdmin;
+    private User owner;
 
     private static int instancesCreated = 0;
 
     public StudyGroup() {
         this.id = instancesCreated++;
-        this.creationDate = LocalDateTime.now();
     }
 
     public StudyGroup(StudyGroupUserInput userInput) {
         this.id = instancesCreated++;
-        this.creationDate = LocalDateTime.now();
 
         this.name = userInput.getName();
         this.coordinates = userInput.getCoordinates();
@@ -57,7 +74,6 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", coordinates=" + coordinates +
-                ", creationDate=" + creationDate +
                 ", studentsCount=" + studentsCount +
                 ", shouldBeExpelled=" + shouldBeExpelled +
                 ", formOfEducation=" + formOfEducation +
@@ -66,7 +82,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 '}';
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -80,6 +96,14 @@ public class StudyGroup implements Comparable<StudyGroup> {
 
     public int getShouldBeExpelled() {
         return shouldBeExpelled;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
     @Override

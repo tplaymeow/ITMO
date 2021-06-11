@@ -8,7 +8,6 @@ import java.util.Properties;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(System.currentTimeMillis());
         Properties properties = new Properties();
         properties.load(new FileReader("src/main/resources/client.properties"));
         int port = Integer.parseInt(properties.getProperty("serverPort"));

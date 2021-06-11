@@ -44,7 +44,6 @@ public class DatagramNetworkManager implements NetworkManagerInterface<CommandDe
         try {
             while (!Objects.nonNull(channel.receive(buffer))) {
                 if (System.currentTimeMillis() - start > 1000) {
-                    System.out.println(System.currentTimeMillis() - start);
                     return null;
                 }
             }

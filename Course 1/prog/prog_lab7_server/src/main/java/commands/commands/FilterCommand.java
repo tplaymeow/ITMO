@@ -1,8 +1,8 @@
 package commands.commands;
 
 import commands.commandDescriptions.CommandDescription;
-import commands.commandDescriptions.FilterCommandDescription;
 import managers.CollectionManager;
+import model.Semester;
 import response.Response;
 
 public class FilterCommand extends Command {
@@ -12,7 +12,6 @@ public class FilterCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        FilterCommandDescription filter = (FilterCommandDescription) commandDescription;
-        return new Response(getCollectionManager().filter(filter.getSemester()), true);
+        return new Response(getCollectionManager().filter((Semester) commandDescription.getObject()), true);
     }
 }

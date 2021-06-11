@@ -2,23 +2,22 @@ package app;
 
 import commands.commandDescriptions.CommandDescription;
 import commands.commands.*;
-import exceptions.AnnotationException;
 import exceptions.CantWriteException;
-import exceptions.ConvertInstructionException;
 import managers.CollectionManager;
 import managers.network.NetworkManagerInterface;
 import model.*;
 import org.apache.logging.log4j.Logger;
+import orm.ORM;
 import response.Response;
 import utils.CSVConstructor;
 import utils.Converter;
 
+import javax.sql.DataSource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeParseException;
+import java.sql.SQLException;
 import java.util.*;
 
 public class App {
@@ -28,45 +27,31 @@ public class App {
     private final NetworkManagerInterface<CommandDescription, Response> network;
     private final InputStream inputStream;
     private Logger logger;
+    private final DataSource dataSource;
+    private ArrayList<User> users = new ArrayList<>();
 
-    public App(String fileName, NetworkManagerInterface<CommandDescription, Response> network, InputStream inputStream, Logger logger) {
+    private ORM<User> userORM;
+
+    public App(String fileName, NetworkManagerInterface<CommandDescription, Response> network, InputStream inputStream, Logger logger, DataSource dataSource) {
         this.logger = logger;
         this.inputStream = inputStream;
         this.network = network;
         this.fileName = fileName;
         this.collectionManager = new CollectionManager(this);
+        this.dataSource = dataSource;
         initializeCollectionMangerFromFile();
     }
 
     private void initializeCollectionMangerFromFile() {
-        Converter<StudyGroup> converter = new Converter<>(StudyGroup.class);
-        Arrays.stream(new Class[]{Color.class, Country.class, FormOfEducation.class, Semester.class})
-                .forEach(enumClass -> {
-                    converter.addInstructionForEnum(enumClass);
-                    converter.addPossibleValuesForEnum(enumClass);
-                });
-        converter.addInstruction(LocalDateTime.class, string -> {
-            try {
-                return LocalDateTime.parse(string);
-            } catch (DateTimeParseException e) {
-                throw new ConvertInstructionException(string);
-            }
-        });
-
         // Добаление коллекции из файла
+        userORM = new ORM<>(dataSource, User.class);
+        userORM.prepare();
         try {
-            collectionManager.addAll(converter.toCollectionOfObjects(CSVConstructor.loadData(fileName), true));
-            println("Коллекция загруженна из файла " + fileName + ". Количество элементов: "
-                    + collectionManager.size() + " (добавленны только элементы прошедшие валидацию)");
-        } catch (IllegalAccessException | InstantiationException | AnnotationException e) {
-            println(e.getMessage());
-            println("Завершение программы...");
-            System.exit(0);
-        } catch (NoSuchFieldException e) {
-            println("Неверно указанно имя поля");
-            println("Созданна пустая коллекция");
-        } catch (IOException e) {
-            println("Ошибка: " + e.getMessage() + ". Созданна пустая коллекция");
+            userORM.createTables();
+            users.addAll(userORM.getObjects());
+            collectionManager.setGroupORM(userORM.getORMForClass(StudyGroup.class));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
 
         commands.add(new HelpCommand(collectionManager));
@@ -82,6 +67,8 @@ public class App {
         commands.add(new CountLessThanCommand(collectionManager));
         commands.add(new CountGreaterThanCommand(collectionManager));
         commands.add(new FilterCommand(collectionManager));
+        commands.add(new LogIn(collectionManager));
+        commands.add(new Register(collectionManager));
     }
 
     public void interactiveMode() {
@@ -100,8 +87,6 @@ public class App {
                     if (line.equals("exit")) {
                         println("Завершение программы...");
                         System.exit(1);
-                    } else if (line.equals("save")) {
-                        save();
                     } else {
                         println("Неверная команда сервера.");
                     }
@@ -127,6 +112,26 @@ public class App {
     public void println(String string) {
         if (Objects.nonNull(logger)) logger.info(string);
         else System.out.println(string);
+    }
+
+    public void addUser(User user) {
+        try {
+            userORM.save(user);
+            users.add(user);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public boolean isUser(User o) {
+        return users.stream()
+                .filter(user -> user.getLogin().equals(o.getLogin()))
+                .findFirst()
+                .map(user -> checkPassword(user, o)).orElse(false);
+    }
+
+    public boolean checkPassword(User user1, User user2) {
+        return user1.getPassword().equals(user2.getPassword());
     }
 
     // Getter and Setters

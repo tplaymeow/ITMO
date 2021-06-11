@@ -1,8 +1,6 @@
 package commands.commands;
 
 import commands.commandDescriptions.CommandDescription;
-import commands.commandDescriptions.RemoveAtCommandDescription;
-import commands.commandDescriptions.RemoveByIdCommandDescription;
 import managers.CollectionManager;
 import response.Response;
 
@@ -13,9 +11,8 @@ public class RemoveAtCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        RemoveAtCommandDescription remove = (RemoveAtCommandDescription) commandDescription;
         try {
-            getCollectionManager().remove(remove.getIndex());
+            getCollectionManager().remove(commandDescription.getValue());
             return new Response("Команда выполнена.", true);
         } catch (IndexOutOfBoundsException e) {
             return new Response("Не верный индекс", false);

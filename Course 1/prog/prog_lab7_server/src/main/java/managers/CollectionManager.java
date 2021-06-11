@@ -4,20 +4,23 @@ import app.App;
 import commands.commands.Command;
 import model.Semester;
 import model.StudyGroup;
+import orm.ORM;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class CollectionManager {
-    private final LinkedList<StudyGroup> collection;
+    private final List<StudyGroup> collection;
 
     private final Date date;
     private final App app;
+    private ORM<StudyGroup> groupORM;
 
     public CollectionManager(App app) {
         this.app = app;
-        this.collection = new LinkedList<>();
+        this.collection = Collections.synchronizedList(new LinkedList<StudyGroup>());
         this.date = new Date();
     }
 
@@ -43,6 +46,14 @@ public class CollectionManager {
     }
 
     public void removeById(int id) {
+        Optional<StudyGroup> gr = collection.stream().filter(group -> group.getId() == id).findFirst();
+        if (gr.isPresent()) {
+            try {
+                groupORM.remove(gr.get());
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
         collection.removeIf(group -> group.getId() == id);
     }
 
@@ -54,6 +65,11 @@ public class CollectionManager {
 
     public void addIfMin(StudyGroup group) {
         if (collection.size() == 0 || group.compareTo(Collections.min(collection)) < 0) {
+            try {
+                groupORM.save(group, group.getId());
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
             collection.add(group);
         }
     }
@@ -71,6 +87,12 @@ public class CollectionManager {
 
     // Delegate methods
     public boolean add(StudyGroup studyGroup) {
+        try {
+            groupORM.save(studyGroup, studyGroup.getId());
+            System.out.println("dfsfdfdsfsd");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return collection.add(studyGroup);
     }
 
@@ -98,7 +120,15 @@ public class CollectionManager {
         return String.valueOf(collection.stream().filter(group -> group.getStudentsCount() > num).count());
     }
 
-    public LinkedList<StudyGroup> getCollection() {
+    public List<StudyGroup> getCollection() {
         return collection;
+    }
+
+    public App getApp() {
+        return app;
+    }
+
+    public void setGroupORM(ORM<StudyGroup> groupORM) {
+        this.groupORM = groupORM;
     }
 }

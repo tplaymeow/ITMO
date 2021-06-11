@@ -1,8 +1,6 @@
 package commands.commands;
 
 import commands.commandDescriptions.CommandDescription;
-import commands.commandDescriptions.CountGraterThanCommandDescription;
-import commands.commandDescriptions.CountLessThanCommandDescription;
 import managers.CollectionManager;
 import response.Response;
 
@@ -13,7 +11,6 @@ public class CountGreaterThanCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        CountGraterThanCommandDescription count = (CountGraterThanCommandDescription) commandDescription;
-        return new Response(getCollectionManager().countGreaterThan(count.getId()), true);
+        return new Response(getCollectionManager().countGreaterThan(commandDescription.getValue()), true);
     }
 }

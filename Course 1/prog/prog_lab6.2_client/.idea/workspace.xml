@@ -3,241 +3,31 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b6a5b526-ac7a-4e38-b43d-94b7399a67ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/'123 456.csv'" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/123 456.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/123.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/1234.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/SG Output.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/StudyGroups.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/StudyGroups2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/StudyGroups3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/commands" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/commandss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/commandsss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/output.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/prog_lab5.1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/converterAnnotations/AutomaticGenerated.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/converterAnnotations/NotWrite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/validatorAnnotations/Between.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/validatorAnnotations/GreaterThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/validatorAnnotations/LongerThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/validatorAnnotations/NotEqualString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/validatorAnnotations/NotNull.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/annotations/validatorAnnotations/ShorterThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/app/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/collectionManager/CollectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/AddCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/AddIfMinCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/ClearCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/CountGreaterThanStudentsCountCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/CountLessThanShouldBeExpelledCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/ExecuteScriptCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/FilterBySemesterEnumCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/HelpCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/InfoCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/RemoveAtCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/RemoveByIdCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/SaveCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/ShowCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/SortCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/commands/UpdateCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/exceptions/AnnotationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/exceptions/ArgumentsCountException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/exceptions/CantWriteException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/exceptions/ConvertInstructionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/exceptions/EndOfFileException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/exceptions/ValidationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/Coordinates.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/Country.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/FormOfEducation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/Location.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/Semester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/model/StudyGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/utils/CSVConstructor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/utils/Converter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/utils/ParseNumInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/utils/Printer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/utils/ToObjectInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab5.1/src/main/java/utils/Validator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/prog_lab6.1_client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/CommandDescriptionFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/commandDescriptions/CommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/commandDescriptions/FilterLessThanNumberOfRoomsCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/commandDescriptions/HelpCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/commandDescriptions/InfoCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/commandDescriptions/ShowCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/exceptions/ArgumentsCountException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/exceptions/UnknownCommandNameException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_client/src/main/java/support/CommandName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/prog_lab6.1_server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/src/main/java/CollectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/src/main/java/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.1_server/src/main/java/Request.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_lab6.2_client/client.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prog_lab6.2_client/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prog_lab6.2_client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/converterAnnotations/AutomaticGenerated.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/converterAnnotations/NotWrite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/Between.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/GreaterThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/LongerThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/NotEqualString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/NotNull.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/validatorAnnotations/ShorterThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/CommandDescriptionFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/AddCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/AddIfMinCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/ClearCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/CommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/CountGraterThanCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/CountLessThanCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/FilterCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/HelpCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/InfoCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/RemoveAtCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/RemoveByIdCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/ShowCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/SortCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/commandDescriptions/UpdateCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/AnnotationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/BadArgumentException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/ConvertInstructionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/EndOfFileException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/NoCommandException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/ValidationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/managers/network/DatagramNetworkManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/managers/network/NetworkManagerInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Coordinates.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Country.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/FormOfEducation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Location.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Semester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/userInput/StudyGroupUserInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/response/Response.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/CheckedFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Converter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Validator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/prog_lab6.2_server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/converterAnnotations/AutomaticGenerated.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/converterAnnotations/NotWrite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/validatorAnnotations/Between.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/validatorAnnotations/GreaterThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/validatorAnnotations/LongerThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/validatorAnnotations/NotEqualString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/validatorAnnotations/NotNull.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/annotations/validatorAnnotations/ShorterThan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/app/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/AddCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/AddIfMinCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/ClearCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/CommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/CountGraterThanCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/CountLessThanCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/FilterCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/HelpCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/InfoCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/RemoveAtCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/RemoveByIdCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/ShowCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/SortCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commandDescriptions/UpdateCommandDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/AddCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/AddIfMinCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/ClearCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/CountGreaterThanCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/CountLessThanCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/FilterCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/HelpCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/InfoCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/RemoveAtCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/RemoveByIdCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/ShowCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/SortCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/commands/commands/UpdateCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/AnnotationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/ArgumentsCountException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/BadArgumentException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/CantWriteException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/ConvertInstructionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/EndOfFileException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/NoCommandException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/exceptions/ValidationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/managers/CollectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/managers/network/DatagramNetworkManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/managers/network/NetworkManagerInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/Coordinates.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/Country.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/FormOfEducation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/Location.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/Semester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/StudyGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/model/userInput/StudyGroupUserInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/response/Response.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/utils/CSVConstructor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/utils/CheckedFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/utils/Converter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/java/utils/Validator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/resources/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/resources/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/src/main/resources/server.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6.2_server/table.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prog_lab6/.idea/workspace.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prog_lab6.2_client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../prog_lab7_client/.idea/prog_lab7_client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog_lab7_client/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../prog_lab7_client/src/main/java/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prog_lab7_client/src/main/java/commands/commandDescriptions/CommandDescriptionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../prog_lab7_client/src/main/java/commands/commandDescriptions/CommandDescriptionFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="1swH6FBvzRIJ2DhY8SFoPJHguaA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -300,6 +91,7 @@
       <workItem from="1621933603726" duration="5574000" />
       <workItem from="1622156246023" duration="646000" />
       <workItem from="1622381157845" duration="132000" />
+      <workItem from="1623137639496" duration="613000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,6 @@
 package commands.commands;
 
 import commands.commandDescriptions.CommandDescription;
-import commands.commandDescriptions.CountLessThanCommandDescription;
 import managers.CollectionManager;
 import response.Response;
 
@@ -12,7 +11,6 @@ public class CountLessThanCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        CountLessThanCommandDescription count = (CountLessThanCommandDescription) commandDescription;
-        return new Response(getCollectionManager().countLessThan(count.getId()), true);
+        return new Response(getCollectionManager().countLessThan(commandDescription.getValue()), true);
     }
 }
