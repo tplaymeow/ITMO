@@ -13,7 +13,9 @@ public class AddCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        getCollectionManager().add(new StudyGroup((StudyGroupUserInput) commandDescription.getObject()));
-        return new Response("Команда выполнена.", true);
+        int code =  getCollectionManager().add(new StudyGroup((StudyGroupUserInput) commandDescription.getObject()), commandDescription.getUser());
+        if (code == 2) return new Response("Группа успешно добавлена", true);
+        if (code == 1) return new Response("Команда не выполнена. Логин или пароль не верен. Используйте команду login", false);
+        return new Response("Что-то пошло нет так(.", false);
     }
 }

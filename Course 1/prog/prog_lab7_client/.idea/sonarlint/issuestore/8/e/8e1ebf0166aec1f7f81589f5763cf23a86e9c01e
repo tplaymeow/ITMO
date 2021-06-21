@@ -1,5 +1,3 @@
 
-F
-java:S1068")Remove this unused "login" private field.(ÒûìÌ8Ç²—Ì/
-N
-java:S1068",Remove this unused "password" private field.(œãë­úÿÿÿÿ8Ç²—Ì/
+“
+java:S1319."qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(¥¤ƒ¥şÿÿÿÿ8ÓÇµèŸ/

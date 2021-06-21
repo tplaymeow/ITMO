@@ -1,17 +1,30 @@
 
-n	java:S135W"YReduce the total number of break and continue statements in this loop to use at most one.(„Ëš¸
-s	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ
+y
+java:S1192R"^Define a constant instead of duplicating this literal "ĞĞµ Ğ²ĞµÑ€Ğ½Ñ‹Ğ¹ Ğ¾Ñ‚Ğ²ĞµÑ‚." 3 times.(ÓÊÎıÿÿÿÿ
+=
+java:S2189$""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
+Q
+java:S1128";Remove this unused import 'exceptions.AnnotationException'.(ÍÙíÇ
+J
+java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”
+U
+java:S1128":Remove this unused import 'exceptions.EndOfFileException'.(“­Á¬şÿÿÿÿ
 P
-java:S1141)"5Extract this nested try block into a separate method.(½¢’øÿÿÿÿ
-D
-java:S1121X".Extract the assignment out of this expression.(ğËõ
-1
-java:S36269"Remove this redundant jump.(ÉŠ©ƒ
-W
-java:S1854Z"BRemove this useless assignment to local variable "commandDidSend".(âËs
-W
-java:S1854a"BRemove this useless assignment to local variable "commandDidSend".(âËs
-m
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 53 to the 15 allowed.(ïŒÖëüÿÿÿÿ
-=	java:S108Q")Either remove or fill this block of code.(”ã‰G
-N	java:S106k"9Replace this use of System.out or System.err by a logger.(±¤ª¹
+java:S1128":Remove this unused import 'exceptions.NoCommandException'.(–”Êâ
+M
+java:S1135/"2Complete the task associated to this TODO comment.(‘»Óÿÿÿÿÿ
+G
+java:S11352"2Complete the task associated to this TODO comment.(†ñ¸
+M
+java:S11355"2Complete the task associated to this TODO comment.(î—‰Ôşÿÿÿÿ
+N	java:S106F"9Replace this use of System.out or System.err by a logger.(±¤ª¹
+J
+java:S1068"/Remove this unused "openScripts" private field.(Â‚¬èûÿÿÿÿ
+G
+java:S1068",Remove this unused "fileMode" private field.(…ÅÔïùÿÿÿÿ
+Q
+java:S1144I"6Remove this unused private "askAboutRecursion" method.(„ÎÁ­ıÿÿÿÿ
+N
+java:S1144V"3Remove this unused private "askAboutResend" method.(â¤®÷üÿÿÿÿ
+K
+java:S1144c"5Remove this unused private "askAboutRegister" method.(ïÊË÷

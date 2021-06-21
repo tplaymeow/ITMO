@@ -33,9 +33,9 @@ public class ORM<T> implements ORMInterface<T> {
     // Strings with requests to db
     private String createTableRequestToDB;
     private String insertRequestToDb;
+    private String updateRequestToDb;
 
-    // Lock
-    private ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+    ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
     public ORM(DataSource dataSource, Class<? super T> clazz) {
         this.dataSource = dataSource;
@@ -43,30 +43,16 @@ public class ORM<T> implements ORMInterface<T> {
     }
 
     @Override
-    public boolean save(T object) throws SQLException {
-        try {
-            readWriteLock.writeLock().lock();
-            insert(object, null);
-        } catch (IllegalAccessException ignored) {
-            System.out.println(ignored.getMessage());
-        }
-        finally {
-            readWriteLock.writeLock().unlock();
-            return true;
-        }
-    }
-    @Override
     public boolean save(T object, Integer id) throws SQLException {
+        readWriteLock.writeLock().lock();
         try {
-            //readWriteLock.writeLock().lock();
-            System.out.println(888);
-
             insert(object, id);
-        } catch (IllegalAccessException ignored) { }
-        finally {
-            //readWriteLock.writeLock().unlock();
-            return true;
+        } catch (IllegalAccessException ignored) {
+        } finally {
+            readWriteLock.writeLock().unlock();
         }
+
+        return true;
     }
 
     @Override
@@ -78,8 +64,8 @@ public class ORM<T> implements ORMInterface<T> {
             e.printStackTrace();
         } finally {
             readWriteLock.readLock().unlock();
-            return new ArrayList<>();
         }
+        return new ArrayList<>();
     }
 
     @Override
@@ -91,56 +77,113 @@ public class ORM<T> implements ORMInterface<T> {
             e.printStackTrace();
         } finally {
             readWriteLock.readLock().unlock();
-            return new ArrayList<>();
         }
+        return new ArrayList<>();
     }
 
     @Override
     public boolean remove(T object) throws SQLException {
+        readWriteLock.writeLock().lock();
         try {
-            readWriteLock.writeLock().lock();
             deleteFromDB(object);
             return true;
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } finally {
-            readWriteLock.writeLock().lock();
-            return true;
+            readWriteLock.writeLock().unlock();
+            return false;
         }
     }
 
     @Override
     public boolean update(T object) throws SQLException {
+        readWriteLock.writeLock().lock();
+        try {
+            updateElement(object);
+        } finally {
+            readWriteLock.writeLock().unlock();
+        }
         return true;
     }
 
     public void prepare() {
         setCreateTableRequestToDB(null);
         setInsertRequestToDb(null);
+        setUpdateRequest();
     }
 
     public void createTables() throws SQLException {
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
+            //System.out.println(createTableRequestToDB);
+            readWriteLock.writeLock().lock();
             statement.execute(createTableRequestToDB);
+            readWriteLock.writeLock().unlock();
         }
-        for (ORM<?> orm:
-             ormInstancesForClasses.values()) {
+        for (ORM<?> orm :
+                ormInstancesForClasses.values()) {
             orm.createTables();
         }
+
     }
 
     // Private Methods
+    private void updateElement(Object object) throws SQLException {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(updateRequestToDb)) {
+            Integer id = null;
+            int counter = 0;
+            for (Field field :
+                    clazz.getDeclaredFields()) {
+                field.setAccessible(true);
+
+                Element elementAnnotation = field.getAnnotation(Element.class);
+                Id idAnnotation = field.getAnnotation(Id.class);
+
+
+                if (Objects.nonNull(elementAnnotation)) {
+                    if (field.getType().isEnum()) {
+                        preparedStatement.setString(++counter, field.get(object).toString());
+                    } else if (typeConverter.containsKey(field.getType()) || String.class.equals(field.getType())) {
+                        preparedStatement.setObject(++counter, field.get(object));
+                    } else {
+                        ORM<?> subOrm = getORMForClass(field.getType());
+                        subOrm.updateElement(field.get(object));
+                    }
+                } else if (Objects.nonNull(idAnnotation)) {
+                    id = (Integer) field.get(object);
+                }
+                field.setAccessible(false);
+            }
+            preparedStatement.setInt(++counter, id);
+            preparedStatement.execute();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void deleteFromDB(Object o) throws SQLException, IllegalAccessException {
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
-            for (Field field:
+            for (Field field :
                     clazz.getDeclaredFields()) {
                 if (Objects.nonNull(field.getAnnotation(Id.class))) {
                     field.setAccessible(true);
                     statement.execute("DELETE FROM " + getTableName() + " WHERE id = " + field.get(o));
                     field.setAccessible(false);
                 }
+            }
+        }
+    }
+
+    public void addCurrentTable(Object object, Integer identifier) throws SQLException {
+        if (!object.getClass().equals(clazz))
+            for (ORM orm : ormInstancesForClasses.values()) orm.addCurrentTable(object, identifier);
+        else {
+            try {
+                insert(object, identifier);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -209,7 +252,7 @@ public class ORM<T> implements ORMInterface<T> {
                 preparedStatement.setInt(index++, identifier);
             }
             LinkedList<Object> nonPrimaryElements = new LinkedList<>();
-            for (Field field:
+            for (Field field :
                     clazz.getDeclaredFields()) {
 
                 field.setAccessible(true);
@@ -219,10 +262,11 @@ public class ORM<T> implements ORMInterface<T> {
                 Id idAnnotation = field.getAnnotation(Id.class);
 
                 if (Objects.nonNull(elementAnnotation)) {
-                    if (typeConverter.containsKey(field.getType()) || String.class.equals(field.getType())) {
+                    if (field.getType().isEnum()) {
+                        preparedStatement.setString(index++, field.get(object).toString());
+                    } else if (typeConverter.containsKey(field.getType()) || String.class.equals(field.getType())) {
                         preparedStatement.setObject(index++, field.get(object));
-                    }
-                    else {
+                    } else {
                         nonPrimaryElements.add(field.get(object));
                     }
                 }
@@ -242,12 +286,10 @@ public class ORM<T> implements ORMInterface<T> {
             if (Objects.nonNull(idField)) {
                 idField.setAccessible(true);
                 idField.set(object, resultSet.getInt("id"));
-                System.out.println(resultSet.getInt("id"));
-                System.out.println(idField.getName());
                 idField.setAccessible(false);
             }
 
-            for (Object element:
+            for (Object element :
                     nonPrimaryElements) {
                 getORMForClass(element.getClass()).insert(element, resultSet.getInt("id"));
             }
@@ -256,17 +298,39 @@ public class ORM<T> implements ORMInterface<T> {
 
 
     // Methods for creating requests
+    private void setUpdateRequest() {
+        StringBuilder updateRequest = new StringBuilder("UPDATE " + getTableName() + " SET ");
+
+        for (Field field :
+                clazz.getDeclaredFields()) {
+            Optional<Element> elementAnnotation = Optional.ofNullable(field.getAnnotation(Element.class));
+
+            if (elementAnnotation.isPresent()) {
+                if (typeConverter.containsKey(field.getType()) || String.class.equals(field.getType())) {
+                    updateRequest
+                            .append(elementAnnotation.get().name().equals("") ? field.getName() : elementAnnotation.get().name())
+                            .append(" = ?, ");
+                }
+            }
+        }
+
+        updateRequest.replace(updateRequest.length() - 2, updateRequest.length() - 1, " WHERE id = ?;");
+        updateRequestToDb = updateRequest.toString();
+
+        ormInstancesForClasses.values().forEach(ORM::setUpdateRequest);
+    }
+
     private void setInsertRequestToDb(String ownerTable) {
-        StringBuilder insertRequest = new StringBuilder("INSERT INTO " + getTableName() +" (");
+        StringBuilder insertRequest = new StringBuilder("INSERT INTO " + getTableName() + " (");
 
         if (Objects.nonNull(ownerTable)) {
             insertRequest
-                    .append(ownerTable +"_id")
+                    .append(ownerTable + "_id")
                     .append(", ");
         }
 
-        int countOfColumns = Objects.nonNull(ownerTable) ?  1 : 0;
-        for (Field field:
+        int countOfColumns = Objects.nonNull(ownerTable) ? 1 : 0;
+        for (Field field :
                 clazz.getDeclaredFields()) {
             Optional<Element> elementAnnotation = Optional.ofNullable(field.getAnnotation(Element.class));
             Optional<OneToMany> toManyElementAnnotation = Optional.ofNullable(field.getAnnotation(OneToMany.class));
@@ -294,14 +358,13 @@ public class ORM<T> implements ORMInterface<T> {
 
         if (countOfColumns != 0) {
             insertRequest.append("(");
-            while(countOfColumns-- != 0) {
+            while (countOfColumns-- != 0) {
                 insertRequest.append("?, ");
             }
         }
 
         insertRequest.replace(insertRequest.length() - 2, insertRequest.length() - 1, ") RETURNING id;");
         insertRequestToDb = insertRequest.toString();
-        System.out.println(insertRequestToDb);
     }
 
     private void setCreateTableRequestToDB(String ownerTableName) {
@@ -370,14 +433,13 @@ public class ORM<T> implements ORMInterface<T> {
                     .append("\t")
                     .append(ownerTableName)
                     .append("_id")
-                    .append(" INT REFERENCES " )
+                    .append(" INT REFERENCES ")
                     .append(ownerTableName)
                     .append(" (id) ")
                     .append("ON DELETE CASCADE  ");
         }
         createRequest.replace(createRequest.length() - 2, createRequest.length() - 1, ");");
         createTableRequestToDB = createRequest.toString();
-        System.out.println(createTableRequestToDB);
     }
 
     private String getTableName() {
@@ -413,10 +475,10 @@ public class ORM<T> implements ORMInterface<T> {
         addInstructionsForType(short.class, getWrappedParseNumFunction(Short::parseShort), Constants.smallIntDB);
         addInstructionsForType(char.class, string -> string.charAt(0), Constants.charDB);
 
-        addInstructionsForType(Semester.class, s -> Semester.valueOf(s), "TEXT");
-        addInstructionsForType(FormOfEducation.class, s -> FormOfEducation.valueOf(s), "TEXT");
-        addInstructionsForType(Country.class, s -> Country.valueOf(s), "TEXT");
-        addInstructionsForType(Color.class, s -> Color.valueOf(s), "TEXT");
+        addInstructionsForType(Color.class, Color::valueOf, "TEXT");
+        addInstructionsForType(Country.class, Country::valueOf, "TEXT");
+        addInstructionsForType(FormOfEducation.class, FormOfEducation::valueOf, "TEXT");
+        addInstructionsForType(Semester.class, Semester::valueOf, "TEXT");
     }
 
     private static CheckedFunction<String, Object, ConvertInstructionException> getWrappedParseNumFunction(Function<String, Object> parseFunction) {
@@ -442,7 +504,15 @@ public class ORM<T> implements ORMInterface<T> {
         static String booleanDB = "BOOLEAN";
         static String smallIntDB = "SMALLINT";
         static String realDB = "REAL";
-        static String doubleDB = "REAL";
+        static String doubleDB = "double precision";
         static String charDB = "CHARACTER [1]";
+    }
+
+    public void userCommand(String command) throws SQLException {
+        try (Connection connection = dataSource.getConnection();
+             Statement statement = connection.createStatement()) {
+            statement.execute(command);
+        }
+
     }
 }

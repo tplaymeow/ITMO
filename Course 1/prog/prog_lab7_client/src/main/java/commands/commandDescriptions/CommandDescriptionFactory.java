@@ -37,9 +37,21 @@ public class CommandDescriptionFactory {
                 case "sort":
                     checkCountOfArgs(splitCommand, 1);
                     return new CommandDescription("sort", user);
+                case "exit":
+                    checkCountOfArgs(splitCommand, 1);
+                    return new CommandDescription("exit", user);
+                case "login":
+                    checkCountOfArgs(splitCommand, 1);
+                    return new CommandDescription("login", user);
+                case "register":
+                    checkCountOfArgs(splitCommand, 1);
+                    return new CommandDescription("register", user);
                 case "remove_by_id":
                     checkCountOfArgs(splitCommand, 2);
                     return new CommandDescription("remove_by_id", user, Integer.parseInt(splitCommand[1]));
+                case "execute_script":
+                    checkCountOfArgs(splitCommand, 2);
+                    return new CommandDescription("execute_script", user, splitCommand[1]);
                 case "remove_at":
                     checkCountOfArgs(splitCommand, 2);
                     return new CommandDescription("remove_at", user, Integer.parseInt(splitCommand[1]));
@@ -55,13 +67,16 @@ public class CommandDescriptionFactory {
                 case "add":
                     checkCountOfArgs(splitCommand, 1);
                     return new CommandDescription("add", user, getStGr(inputStream, printer));
+                case "update":
+                    checkCountOfArgs(splitCommand, 2);
+                    return new CommandDescription("update", user, Integer.parseInt(splitCommand[1]), getStGr(inputStream, printer));
                 case "add_if_min":
                     checkCountOfArgs(splitCommand, 1);
                     return new CommandDescription("add_if_min", user, getStGr(inputStream, printer));
                 default:
                     throw new BadArgumentException("Команды " + commandName + " не существует");
             }
-        } catch (AnnotationException | EndOfFileException | InstantiationException | IllegalAccessException | IOException e) {
+        } catch (AnnotationException | EndOfFileException | InstantiationException | IllegalAccessException | IOException | NumberFormatException e) {
             throw new BadArgumentException(e.getMessage());
         }
     }

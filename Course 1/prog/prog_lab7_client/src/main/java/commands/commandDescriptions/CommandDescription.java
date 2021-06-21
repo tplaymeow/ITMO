@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class CommandDescription implements Serializable {
     private final String name;
-    private final User user;
+    private  User user;
     private Integer value;
     private Object object;
 
@@ -21,6 +21,13 @@ public class CommandDescription implements Serializable {
         this.value = value;
     }
 
+    public CommandDescription(String name, User user, Integer value, Object object) {
+        this.name = name;
+        this.user = user;
+        this.value = value;
+        this.object = object;
+    }
+
     public CommandDescription(String name, User user, Object object) {
         this.name = name;
         this.user = user;
@@ -33,6 +40,10 @@ public class CommandDescription implements Serializable {
 
     public User getUser() {
         return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Integer getValue() {

@@ -11,6 +11,10 @@ public class ShowCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        return new Response(getCollectionManager().show(), true);
+        if (getCollectionManager().containsUser(commandDescription.getUser())) {
+            return new Response(getCollectionManager().show(), true);
+        }
+        return new Response("Команда не выполнена. Логин или пароль не верен. Используйте команду login", false);
+
     }
 }

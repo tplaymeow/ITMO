@@ -11,7 +11,11 @@ public class SortCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        getCollectionManager().sort();
-        return new Response("Команда выполнена.", true);
+        if (getCollectionManager().containsUser(commandDescription.getUser())) {
+            getCollectionManager().sort();
+            return new Response("Команда выполнена.", true);
+        }
+        return new Response("Команда не выполнена. Логин или пароль не верен. Используйте команду login", false);
+
     }
 }

@@ -1,0 +1,5 @@
+
+Œ
+java:S1319e"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(×»ÂÄýÿÿÿÿ
+Y
+java:S11558">Use isEmpty() to check whether the collection is empty or not.(ÆŒˆËþÿÿÿÿ

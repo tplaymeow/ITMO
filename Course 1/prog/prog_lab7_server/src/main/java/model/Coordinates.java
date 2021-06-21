@@ -1,22 +1,28 @@
 package model;
 
+import annotations.Id;
 import annotations.Table;
+import annotations.constraints.GreaterThan;
 import annotations.constraints.NoNull;
+import annotations.converterAnnotations.NotWrite;
 import annotations.relationshipType.Element;
-import annotations.validatorAnnotations.GreaterThan;
 import annotations.validatorAnnotations.NotNull;
 
 import java.io.Serializable;
-@Table("ccord")
+
+@Table("Coords")
 public class Coordinates implements Serializable {
     @Element
+    @GreaterThan(-387)
     @NoNull
-    @annotations.constraints.GreaterThan(-387)
+    @annotations.validatorAnnotations.GreaterThan(num = -387)
     @NotNull
-    @GreaterThan(num = -387)
     private Long x;
     @Element
     private double y;
+    @Id
+    @NotWrite
+    private int id;
 
     public Coordinates() {
     }

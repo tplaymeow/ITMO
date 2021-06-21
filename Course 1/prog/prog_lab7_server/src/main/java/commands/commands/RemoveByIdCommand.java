@@ -11,7 +11,9 @@ public class RemoveByIdCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        getCollectionManager().removeById(commandDescription.getValue());
-        return new Response("Команда выполнена.", true);
+        int code = getCollectionManager().removeById(commandDescription.getValue(), commandDescription.getUser());
+        if (code == 1) return new Response("Команда выполнена.", true);
+        if (code == 0) return new Response("Команда не выполнена. Логин или пароль не верен. Используйте команду login", false);
+        return new Response("Что-то пошло нет так(.", false);
     }
 }

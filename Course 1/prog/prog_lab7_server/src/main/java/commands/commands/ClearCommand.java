@@ -11,7 +11,10 @@ public class ClearCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        getCollectionManager().clear();
-        return new Response("Команда выполнена.", true);
+        if (getCollectionManager().containsUser(commandDescription.getUser())) {
+            getCollectionManager().clear(commandDescription.getUser());
+            return new Response("Команда выполнена.", true);
+        }
+        return new Response("Команда не выполнена. Логин или пароль не верен. Используйте команду login", false);
     }
 }

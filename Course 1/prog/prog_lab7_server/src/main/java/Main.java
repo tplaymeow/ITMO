@@ -4,9 +4,12 @@ import managers.network.DatagramNetworkManager;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+
+import managers.network.RequestWaiter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.postgresql.ds.PGSimpleDataSource;
+import utils.Hasher;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -28,9 +31,8 @@ public class Main {
         dataSource.setPassword(properties.getProperty("db_password"));
 
 
-        DatagramNetworkManager networkManager = new DatagramNetworkManager(port);
-        networkManager.setLogger(logger);
-        App app = new App("table.csv", networkManager, System.in, logger, dataSource);
+        RequestWaiter requestWaiter = new RequestWaiter(port, logger);
+        App app = new App(requestWaiter, System.in, logger, dataSource);
         app.interactiveMode();
     }
 }

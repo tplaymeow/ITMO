@@ -1,0 +1,17 @@
+
+…
+java:S1319"oThe type of the "data" object should be an interface such as "List" rather than the implementation "ArrayList".(ãš‘
+‹
+java:S1319,"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¯¶¬¨øÿÿÿÿ
+g
+java:S2095."LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(³÷©Üüÿÿÿÿ
+g
+java:S2095"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ØœãØıÿÿÿÿ
+m	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(§•M
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(·¸Şš
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ïÇˆüÿÿÿÿ
+\	java:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+n
+java:S22932"YReplace the type specification in this constructor call with the diamond operator ("<>").(‹ùîV
+>	java:S1087")Either remove or fill this block of code.(¨šşµ

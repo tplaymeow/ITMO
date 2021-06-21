@@ -1,27 +1,25 @@
 package model;
 
+import annotations.Id;
 import annotations.Table;
-import annotations.constraints.NoNull;
+import annotations.converterAnnotations.NotWrite;
 import annotations.relationshipType.Element;
-import annotations.validatorAnnotations.NotNull;
 
 import java.io.Serializable;
-@Table("location")
+
+@Table("Locations")
 public class Location implements Serializable {
     @Element
-    @NoNull
-    @NotNull
     private Float x;
     @Element
-    @NoNull
-    @NotNull
     private Long y;
     @Element
     private long z;
     @Element
-    @NoNull
-    @NotNull
     private String name;
+    @Id
+    @NotWrite
+    private int id;
 
     public Location() {
     }

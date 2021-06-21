@@ -11,7 +11,12 @@ public class Register extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        getCollectionManager().getApp().addUser(commandDescription.getUser());
-        return new Response("успех", true);
+        if (getCollectionManager().register(commandDescription.getUser()) == 2) {
+            return new Response("Вы успешно зарегистрировались.", true);
+        } else if (getCollectionManager().register(commandDescription.getUser()) == 1) {
+            return new Response("Данный логин занят.", false);
+        } else {
+            return new Response("Что-то пошло нет так(.", false);
+        }
     }
 }

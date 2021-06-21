@@ -11,6 +11,9 @@ public class CountGreaterThanCommand extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        return new Response(getCollectionManager().countGreaterThan(commandDescription.getValue()), true);
+        if (getCollectionManager().containsUser(commandDescription.getUser())) {
+            return new Response(getCollectionManager().countGreaterThan(commandDescription.getValue()), true);
+        }
+        return new Response("Команда не выполнена. Логин или пароль не верен. Используйте команду login", false);
     }
 }

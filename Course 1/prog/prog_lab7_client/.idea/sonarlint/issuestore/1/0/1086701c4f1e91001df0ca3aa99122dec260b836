@@ -1,5 +1,10 @@
 
+Q
+java:S3740J"/Provide the parametrized type for this generic.(‰ìşãşÿÿÿÿ8ËÆµèŸ/
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›„¡Ú
 P
-java:S1118":Add a private constructor to hide the implicit public one.(®Ï¯
-<	java:S131""Add a default case to this switch.(€±Öøÿÿÿÿ
+java:S1118":Add a private constructor to hide the implicit public one.(®Ï¯
+Y
+java:S1611K"7Remove the parentheses around the "enumClass" parameter(ªÃüÿÿÿÿ8ŸÇµèŸ/
+Q
+java:S1611O"4Remove the parentheses around the "string" parameter(¦øøÔ8 ÇµèŸ/

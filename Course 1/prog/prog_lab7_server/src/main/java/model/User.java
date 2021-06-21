@@ -1,23 +1,11 @@
 package model;
 
-import annotations.Table;
-import annotations.constraints.Unique;
-import annotations.relationshipType.Element;
-import annotations.relationshipType.OneToMany;
-
 import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.Objects;
 
-@Table("users")
 public class User implements Serializable {
-    @Element
     private String login;
-    @Element
-    @Unique
     private String password;
-    @OneToMany
-    private LinkedList<StudyGroup> studyGroups;
 
     public User() {
     }
@@ -43,22 +31,16 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public LinkedList<StudyGroup> getStudyGroups() {
-        return studyGroups;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(getLogin(), user.getLogin()) &&
-                Objects.equals(getPassword(), user.getPassword()) &&
-                Objects.equals(getStudyGroups(), user.getStudyGroups());
+        return Objects.equals(login, user.login) && Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLogin(), getPassword(), getStudyGroups());
+        return Objects.hash(login, password);
     }
 }

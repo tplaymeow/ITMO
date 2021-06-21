@@ -1,0 +1,6 @@
+
+S	java:S106i"9Replace this use of System.out or System.err by a logger.(‰Æßøÿÿÿÿ
+K
+java:S1068".Remove this unused "dataSource" private field.(ÀÀŠ¤8ĞÆâçŸ/
+K
+java:S1068")Remove this unused "users" private field.(€¤Ïäşÿÿÿÿ8ĞÆâçŸ/

@@ -11,10 +11,10 @@ public class LogIn extends Command {
 
     @Override
     public Response execute(CommandDescription commandDescription) {
-        if (getCollectionManager().getApp().isUser(commandDescription.getUser())) {
-            return new Response("Добро пожаловать", true);
+        if (getCollectionManager().containsUser(commandDescription.getUser())) {
+            return new Response("Добро пожаловать, " + commandDescription.getUser().getLogin(), true);
         } else {
-            return new Response("Неверный логин или пароль", false);
+            return new Response("Пользователя с таким логином и паролем не существует", false);
         }
     }
 }

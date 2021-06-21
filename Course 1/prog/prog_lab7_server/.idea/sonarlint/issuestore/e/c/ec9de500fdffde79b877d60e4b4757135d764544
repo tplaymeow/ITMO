@@ -1,0 +1,32 @@
+
+†
+java:S1319`"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(˜Ú¯Î
+‹
+java:S1319w"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(øİ°úÿÿÿÿ
+Œ
+java:S1319—"pThe type of the "names" object should be an interface such as "List" rather than the implementation "ArrayList".(—îşùÿÿÿÿ
+‹
+java:S1319—"oThe type of the "data" object should be an interface such as "List" rather than the implementation "ArrayList".(—îşùÿÿÿÿ
+‡
+java:S1319†"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(µÑ’â
+˜
+java:S1319†"€The type of the "arrayOfDataWithHeader" object should be an interface such as "List" rather than the implementation "ArrayList".(µÑ’â
+E
+java:S3740N"/Provide the parametrized type for this generic.(´ÿ±ƒ
+n	java:S127·"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
+m	java:S127º"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ÄK
+g	java:S117°"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıÊÆú
+g	java:S117±"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥˜¶ï
+J
+java:S1121ä".Extract the assignment out of this expression.(Ãı§¢ıÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‘÷ÖÁøÿÿÿÿ
+R
+java:S1611L"7Remove the parentheses around the "inputEnum" parameter(êË‹¹şÿÿÿÿ
+?	java:S108…")Either remove or fill this block of code.(”³Ô
+n
+java:S3776—"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(—îşùÿÿÿÿ
+p
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(›§¼
+D	java:S108Å")Either remove or fill this block of code.(Ë„Š úÿÿÿÿ
+n
+java:S3776Ö"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(¶ÿéüşÿÿÿÿ
