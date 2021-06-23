@@ -5,7 +5,9 @@ import presention.tablePresentation.TableView;
 import javax.swing.*;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
+import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class MainView extends JFrame {
     private JTabbedPane tabbedPane;
@@ -16,44 +18,50 @@ public class MainView extends JFrame {
 
     private boolean isLogin = false;
 
-    public void init() {
+    public void init(ActionListener listener, TableModel model) {
         setTitle("Storage of Study Groups");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
 
-        configureTabs();
-        configureMenu();
+        configureTabs(model);
+        configureMenu(listener);
         configureLowerPane();
 
         pack();
         setVisible(true);
     }
 
-    private void configureTabs() {
+    private void configureTabs(TableModel model) {
         // init TabbedPane
         tabbedPane = new JTabbedPane();
 
         // Add table tab
         TableView tableView = new TableView();
-        tableView.init();
+        tableView.init(model);
         tabbedPane.add("Table presentation", tableView);
 
         // Add TabbedPane
         add(tabbedPane, BorderLayout.CENTER);
     }
 
-    private void configureMenu() {
+    private void configureMenu(ActionListener listener) {
         // Init MenuBar
         menuBar = new JMenuBar();
 
         // Add edit menu
         JMenu editMenu = new JMenu("Edit Collection");
         JMenuItem addMenuItem = new JMenuItem("Add");
+        addMenuItem.addActionListener(listener);
         JMenuItem addIfMinMenuItem = new JMenuItem("Add if min");
+        addIfMinMenuItem.addActionListener(listener);
         JMenuItem updateMenuItem = new JMenuItem("Update");
+        updateMenuItem.addActionListener(listener);
         JMenuItem removeByIdMenuItem = new JMenuItem("Remove by ID");
+        removeByIdMenuItem.addActionListener(listener);
         JMenuItem removeAtMenuItem = new JMenuItem("Remove at...");
+        removeAtMenuItem.addActionListener(listener);
         JMenuItem clearMenuItem = new JMenuItem("Clear");
+        clearMenuItem.addActionListener(listener);
 
         editMenu.add(addMenuItem);
         editMenu.add(addIfMinMenuItem);
@@ -98,7 +106,7 @@ public class MainView extends JFrame {
 
     private void configureLowerPane() {
         Container panel = new JPanel();
-        SpringLayout layout = new SpringLayout();
+        FlowLayout layout = new FlowLayout(FlowLayout.RIGHT);
         panel.setLayout(layout);
 
         add(panel, BorderLayout.SOUTH);
@@ -108,8 +116,7 @@ public class MainView extends JFrame {
         usernameLabel = new JLabel("1234");
 
         panel.add(usernameLabel);
-
-        layout.putConstraint(SpringLayout.WEST, usernameLabel,6,SpringLayout.WEST, panel);
-        layout.putConstraint(SpringLayout.NORTH, usernameLabel, 6, SpringLayout.WEST, panel);
+        panel.add(loginButton);
+        panel.add(registerButton);
     }
 }

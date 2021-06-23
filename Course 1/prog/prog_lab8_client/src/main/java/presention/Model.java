@@ -19,6 +19,10 @@ public class Model implements TableModel {
             flats.add(new Flat(i, "Govno", new Coordinates(i, i)));
     }
 
+    public boolean add(Flat flat) {
+        return flats.add(flat);
+    }
+
     @Override
     public int getRowCount() {
         return flats.size();
@@ -71,7 +75,6 @@ public class Model implements TableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        System.out.println(rowIndex);
         Flat flat = flats.get(rowIndex);
         switch (columnIndex) {
             case 0:

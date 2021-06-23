@@ -2,7 +2,9 @@ import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import presention.Model;
 import presention.add.AddView;
+import presention.main.MainController;
 import presention.main.MainView;
 
 import javax.swing.*;
@@ -11,10 +13,11 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-//        FlatIntelliJLaf.setup();
+
+        Model model = new Model();
         MainView view = new MainView();
-        SwingUtilities.invokeLater(view::init);
-//        SwingUtilities.invokeLater(Main::createAndShowGUI);
+        MainController controller = new MainController(view, model);
+        controller.presentView();
     }
 
     public static void gui() {
