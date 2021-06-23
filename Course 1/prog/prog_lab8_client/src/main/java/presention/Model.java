@@ -15,7 +15,7 @@ public class Model implements TableModel {
 
     {
         flats = new ArrayList<>();
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 10; i++)
             flats.add(new Flat(i, "Govno", new Coordinates(i, i)));
     }
 
