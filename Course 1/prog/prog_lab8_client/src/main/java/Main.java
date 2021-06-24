@@ -6,6 +6,7 @@ import presention.Model;
 import presention.add.AddView;
 import presention.main.MainController;
 import presention.main.MainView;
+import presention.remove.RemoveView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +19,8 @@ public class Main {
         MainView view = new MainView();
         MainController controller = new MainController(view, model);
         controller.presentView();
+
+//        SwingUtilities.invokeLater(() -> new RemoveView(RemoveView.REMOVE_AT).init());
     }
 
     public static void gui() {

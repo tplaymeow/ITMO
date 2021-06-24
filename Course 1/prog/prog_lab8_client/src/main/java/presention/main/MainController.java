@@ -1,11 +1,10 @@
 package presention.main;
 
-import model.Coordinates;
-import model.Flat;
 import presention.Model;
+import presention.remove.RemoveController;
+import presention.remove.RemoveView;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class MainController {
@@ -22,7 +21,10 @@ public class MainController {
     }
 
     public void menuItemDidSelect(ActionEvent e) {
-        model.add(new Flat(1337, "Timur", new Coordinates(3, 5)));
-        view.repaint();
+        if ("Remove".equals(e.getActionCommand())) {
+            RemoveView removeView = new RemoveView();
+            RemoveController controller = new RemoveController(removeView, model);
+            controller.presentView();
+        }
     }
 }
