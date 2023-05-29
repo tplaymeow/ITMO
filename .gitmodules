@@ -1,3 +1,18 @@
 [submodule "Course 2/Low-Level Programming"]
 	path = Course 2/Low-Level Programming
 	url = https://github.com/tplaymeow/itmo-low-level-programming
+[submodule "Course 2/Web/web-lab1"]
+	path = Course 2/Web/web-lab1
+	url = https://github.com/tplaymeow/itmo-web-lab1
+[submodule "Course 2/Web/web-lab2"]
+	path = Course 2/Web/web-lab2
+	url = https://github.com/tplaymeow/itmo-web-lab2
+[submodule "Course 2/Web/web-lab3"]
+	path = Course 2/Web/web-lab3
+	url = https://github.com/tplaymeow/itmo-web-lab3
+[submodule "Course 2/Web/web-lab4-frontend"]
+	path = Course 2/Web/web-lab4-frontend
+	url = https://github.com/tplaymeow/itmo-web-lab4-frontend
+[submodule "Course 2/Web/web-lab4-backend"]
+	path = Course 2/Web/web-lab4-backend
+	url = https://github.com/tplaymeow/itmo-web-lab4-backend
