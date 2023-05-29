@@ -19,3 +19,21 @@
 [submodule "Course 2/Math Logic"]
 	path = Course 2/Math Logic
 	url = https://github.com/tplaymeow/itmo-math-logic
+[submodule "Course 2/Computational Math/computational-math-lab1"]
+	path = Course 2/Computational Math/computational-math-lab1
+	url = https://github.com/tplaymeow/itmo-computational-math-lab1
+[submodule "Course 2/Computational Math/computational-math-lab2"]
+	path = Course 2/Computational Math/computational-math-lab2
+	url = https://github.com/tplaymeow/itmo-computational-math-lab2
+[submodule "Course 2/Computational Math/computational-math-lab3"]
+	path = Course 2/Computational Math/computational-math-lab3
+	url = https://github.com/tplaymeow/itmo-computational-math-lab3
+[submodule "Course 2/Computational Math/computational-math-lab4"]
+	path = Course 2/Computational Math/computational-math-lab4
+	url = https://github.com/tplaymeow/itmo-computational-math-lab4
+[submodule "Course 2/Computational Math/computational-math-lab5"]
+	path = Course 2/Computational Math/computational-math-lab5
+	url = https://github.com/tplaymeow/itmo-computational-math-lab5
+[submodule "Course 2/Computational Math/computational-math-lab6"]
+	path = Course 2/Computational Math/computational-math-lab6
+	url = https://github.com/tplaymeow/itmo-computational-math-lab6
