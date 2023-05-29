@@ -43,3 +43,4 @@
 [submodule "Course 2/Algorithms"]
 	path = Course 2/Algorithms
 	url = https://github.com/tplaymeow/itmo-algorithms
+	branch = main
