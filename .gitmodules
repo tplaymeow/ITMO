@@ -16,3 +16,6 @@
 [submodule "Course 2/Web/web-lab4-backend"]
 	path = Course 2/Web/web-lab4-backend
 	url = https://github.com/tplaymeow/itmo-web-lab4-backend
+[submodule "Course 2/Math Logic"]
+	path = Course 2/Math Logic
+	url = https://github.com/tplaymeow/itmo-math-logic
