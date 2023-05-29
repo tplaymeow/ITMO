@@ -37,3 +37,6 @@
 [submodule "Course 2/Computational Math/computational-math-lab6"]
 	path = Course 2/Computational Math/computational-math-lab6
 	url = https://github.com/tplaymeow/itmo-computational-math-lab6
+[submodule "Course 2/Probability Theory/probability-theory-task5"]
+	path = Course 2/Probability Theory/probability-theory-task5
+	url = https://github.com/tplaymeow/itmo-probability-theory-task5
