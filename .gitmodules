@@ -44,3 +44,15 @@
 	path = Course 2/Algorithms
 	url = https://github.com/tplaymeow/itmo-algorithms
 	branch = main
+[submodule "Course 3/Databases/itmo-databases-lab1"]
+	path = Course 3/Databases/itmo-databases-lab1
+	url = https://github.com/tplaymeow/itmo-databases-lab1
+	branch = main
+[submodule "Course 3/Databases/itmo-databases-lab3"]
+	path = Course 3/Databases/itmo-databases-lab3
+	url = https://github.com/tplaymeow/itmo-databases-lab3
+	branch = main
+[submodule "Course 3/Databases/itmo-databases-lab4"]
+	path = Course 3/Databases/itmo-databases-lab4
+	url = https://github.com/tplaymeow/itmo-databases-lab4
+	branch = main
